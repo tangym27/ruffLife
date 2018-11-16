@@ -1,3 +1,53 @@
-michelleT, aaronL, kaitlinW, boL -- 2018-11-16 12:17
-created repo and discussed our design doc
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+USAGE:
+* Replace all fields, angle brackets included, with specified info.
+  eg, pd <pd#> --> pd 3
+* Delete these instructions once all teammates understand usage.
+  (from tilde bar above to tilde bar below)
+* rename this file devlog.txt
 
+devlog--
+Use keyboard shortcut to jump to end,
+ replicate entry template, (Ctrl-Shift up x5, Ctrl-X, Ctrl-V x2)
+ modify appropriately.
+Each entry should begin with the following format:
+ firstL -- TIMESTAMP\n
+e.g.:
+clydeS -- 2999-12-31 23:59
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<ruffLife>
+<Xiaojie(Aaron) Li>
+<Michelle Tang>
+<Kaitlin Wan>
+<Bo Hui Lu>
+pd <6>
+---------------------
+<Project Title/Description>
+Using RESTful APIs to help stressful users relax mentally by looking
+at various memes, aesthetically pleasing animals(just dogs and cats), or
+funny jokes. The user will laugh, smile, and appreciate the wonder of animals
+and our beautiful website.
+
+ ______   ______   __   __   __       ______   _______
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
+==============================================================
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+AaronL -- 2018-11-16 12:25
+--------------------------------------------------------------
+* added project description/title
+* added devlog template instead of plain file
+* added flask app.py template
+==============================================================
+
+michelleT, aaronL, kaitlinW, boL -- 2018-11-16 12:17
+--------------------------------------------------------------
+created repo and discussed our design doc
+==============================================================
