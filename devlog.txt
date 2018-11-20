@@ -39,7 +39,7 @@ and our beautiful website.
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-michelleT, aaronL, kaitlinW, boL -- 2018-11-19 12:29
+michelleT, aaronL, kaitlinW, boL -- 2018-11-20 12:29
 --------------------------------------------------------------
 worked on design doc - divided + conquered
 m: compenet map
