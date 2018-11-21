@@ -45,9 +45,9 @@ boL -- 2018-11-21 00:00 ??
 clarifying sight map and interactions 
 ==============================================================
 
-aaronL -- 2018-11-21 00:00 ??
+aaronL -- 2018-11-21 12:44 
 --------------------------------------------------------------
-describe weather compenent, describe APis, database schema
+describe weather compenent, describe APIs, database schema
 ==============================================================
 
 kaitlinW -- 2018-11-21 14:00
@@ -84,7 +84,7 @@ aaronL -- 2018-11-16 12:25
 added project description/title
 added devlog template instead of plain file
 added flask app.py template
-==============================================================
+====================================================README.md==========
 
 michelleT, aaronL, kaitlinW, boL -- 2018-11-16 12:17
 --------------------------------------------------------------
