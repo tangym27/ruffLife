@@ -39,16 +39,26 @@ and our beautiful website.
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+michelleT, aaronL, kaitlinW, boL -- 2018-11-20 12:29
+--------------------------------------------------------------
+worked on design doc - divided + conquered
+m: compenet map
+a: database design
+k: sitemap 
+b: researching apis 
+==============================================================
+
+
 michelleT, aaronL, kaitlinW, boL -- 2018-11-19 12:29
 --------------------------------------------------------------
 worked on design doc (including site map, component map, and distribution of functions)
-
+==============================================================
 
 aaronL -- 2018-11-16 12:25
 --------------------------------------------------------------
-* added project description/title
-* added devlog template instead of plain file
-* added flask app.py template
+added project description/title
+added devlog template instead of plain file
+added flask app.py template
 ==============================================================
 
 michelleT, aaronL, kaitlinW, boL -- 2018-11-16 12:17
