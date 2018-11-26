@@ -39,12 +39,12 @@ and our beautiful website.
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-michelleT -- 2018-11-25 11:36
+michelleT -- 2018-11-25 23:36
 --------------------------------------------------------------
 added templates&html files in preparation for my absence tmrw
 ==============================================================
 
-michelleT -- 2018-11-25 1:49
+michelleT -- 2018-11-25 13:49
 --------------------------------------------------------------
 revised the design doc
 ==============================================================
@@ -77,7 +77,7 @@ worked on design doc
 michelleT, aaronL, kaitlinW, boL -- 2018-11-20 12:29
 --------------------------------------------------------------
 worked on design doc - divided + conquered
-m: compenet map
+m: component map
 a: database design
 k: sitemap 
 b: researching apis 
@@ -93,7 +93,7 @@ aaronL -- 2018-11-16 12:25
 added project description/title
 added devlog template instead of plain file
 added flask app.py template
-====================================================README.md==========
+==============================================================
 
 michelleT, aaronL, kaitlinW, boL -- 2018-11-16 12:17
 --------------------------------------------------------------
