@@ -19,7 +19,7 @@ def home():
     """
 
     if "user" in session: 
-        return redirect("/profile")
+        return redirect("/feed")
     return render_template("index.html")
 
 @app.route("/authenticate", methods = ["POST", "GET"])
@@ -40,6 +40,17 @@ def auth():
     # check login creation or login
     if "pass2" in request.form.keys():
         loginStatus = auth.createAccount(request.form["user"], request.form["pass1"], request.form["pass2"])
+    else:
+        loginStatus = auth.checkInfo(request.form["user"], request.form["pass"])
+    
+    # if user successfull logs in, redirects to their feed
+    if loginStatus in ["Account creation successful", "Login Successful"]:
+        session["user"] = request.form["user"]
+        return redirect("/feed")
+
+@app.route("/feed")
+def feed():
+    return render_template("feed.html")
 
 # run flask app with debug set to true
 if __name__ == "__main__":
