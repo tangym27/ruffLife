@@ -22,8 +22,25 @@ def home():
         return redirect("/profile")
     return render_template("index.html")
 
+@app.route("/authenticate", methods = ["POST", "GET"])
+def auth():
+    """
+    If a user enters authenticate route manually(without logging in), redirect them back to the right road.
+    If a user enters authenticate route after submitting a form:
+        * if the username and password is found in the in the database, redirect to their feed
+        * if username and/or the password is not found, flash an appropriate message and redirect to login
+    """
 
+    loginStatus = ''
+    
+    # if user got here manually, redirect to root
+    if request.method == "GET" or "user" not in request.form.keys():
+        return redirect('/')
 
-# run flask app with debug
+    # check login creation or login
+    if "pass2" in request.form.keys():
+        loginStatus = auth.createAccount(request.form["user"], request.form["pass1"], request.form["pass2"])
+
+# run flask app with debug set to true
 if __name__ == "__main__":
     app.run(debug = True)

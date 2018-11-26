@@ -42,6 +42,7 @@ and our beautiful website. Not to mention there is an animal themed weather site
 aaronL -- 2018-11-26 12:16
 --------------------------------------------------------------
 - did root route and login of flask app
+- working on authentication route of login
 ==============================================================
 
 boL -- 2018-11-26 12:15
