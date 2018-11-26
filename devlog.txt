@@ -47,7 +47,8 @@ aaronL -- 2018-11-26 12:16
 
 boL -- 2018-11-26 12:15
 --------------------------------------------------------------
--worked on design.pdf -> researched APIs we decided to use
+- worked on design.pdf
+- began working on util folder w/ acc and db creation
 ==============================================================
 
 
