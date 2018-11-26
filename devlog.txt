@@ -27,7 +27,7 @@ pd <6>
 Using RESTful APIs to help stressful users relax mentally by looking
 at various memes, aesthetically pleasing animals(just dogs and cats), or
 funny jokes. The user will laugh, smile, and appreciate the wonder of animals
-and our beautiful website.
+and our beautiful website. Not to mention there is an animal themed weather site as well!
 
  ______   ______   __   __   __       ______   _______
 /_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
@@ -38,6 +38,14 @@ and our beautiful website.
     \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+boL -- 2018-11-26 12:15
+--------------------------------------------------------------
+-worked on design.pdf -> researched APIs we decided to use
+
+==============================================================
+
 
 michelleT -- 2018-11-25 23:36
 --------------------------------------------------------------
