@@ -59,65 +59,65 @@ boL -- 2018-11-26 12:15
 
 michelleT -- 2018-11-25 23:36
 --------------------------------------------------------------
-added templates&html files in preparation for my absence tmrw
+- added templates&html files in preparation for my absence tmrw
 ==============================================================
 
 michelleT -- 2018-11-25 13:49
 --------------------------------------------------------------
--Fixed the components’ front end by adding the weather section
--separated the component map to  into different sections 
--redid the component map image to incorporate the database usage 
+- Fixed the components’ front end by adding the weather section
+- separated the component map to  into different sections 
+- redid the component map image to incorporate the database usage 
 ==============================================================
 
 aaronL -- 2018-11-21 12:49 
 --------------------------------------------------------------
-started working on flask app.py 
+- started working on flask app.py 
 ==============================================================
 
 aaronL -- 2018-11-21 12:44 
 --------------------------------------------------------------
--Fixed the components’ front end by adding the weather section
--elaborated on use of database schema
--describe APIs
+- Fixed the components’ front end by adding the weather section
+- elaborated on use of database schema
+- describe APIs
 ==============================================================
 
 kaitlinW -- 2018-11-21 14:00
 --------------------------------------------------------------
--updating sitemap, update interactions between pages
+- updating sitemap, update interactions between pages
 ==============================================================
 
 michelleT, aaronL, kaitlinW, boL -- 2018-11-21 12:22 
 --------------------------------------------------------------
-reviewed comments and feedback
+- reviewed comments and feedback
 ==============================================================
 
 michelleT, aaronL, kaitlinW, boL -- 2018-11-20 20:30
 --------------------------------------------------------------
-worked on design doc
+- worked on design doc
 ==============================================================
 
 michelleT, aaronL, kaitlinW, boL -- 2018-11-20 12:29
 --------------------------------------------------------------
 worked on design doc - divided + conquered
-m: component map
-a: database design
-k: sitemap 
-b: researching apis 
+- m: component map
+- a: database design
+- k: sitemap 
+- b: researching apis 
 ==============================================================
 
 michelleT, aaronL, kaitlinW, boL -- 2018-11-19 12:29
 --------------------------------------------------------------
-worked on design doc (including site map, component map, and distribution of functions)
+- worked on design doc (including site map, component map, and distribution of functions)
 ==============================================================
 
 aaronL -- 2018-11-16 12:25
 --------------------------------------------------------------
-added project description/title
-added devlog template instead of plain file
-added flask app.py template
+- added project description/title
+- added devlog template instead of plain file
+- added flask app.py template
 ==============================================================
 
 michelleT, aaronL, kaitlinW, boL -- 2018-11-16 12:17
 --------------------------------------------------------------
-created repo and discussed our design doc
+- created repo and discussed our design doc
 ==============================================================
