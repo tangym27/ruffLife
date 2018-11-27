@@ -39,6 +39,14 @@ and our beautiful website. Not to mention there is an animal themed weather site
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+aaronL, boL, michelleT, kaitlinW -- 2018-11-27 12:43
+--------------------------------------------------------------
+K: creating base.html for our landing page & developing css 
+B: adding authentication and account creation 
+A: editing readme for clarification
+M: fixing our design doc bc our component map does not exist
+==============================================================
+
 aaronL -- 2018-11-27 12:19
 --------------------------------------------------------------
 - finished the feed route and logout route
