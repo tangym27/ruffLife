@@ -18,10 +18,11 @@ def home():
     If not logged in, prompt login page
     """
 
-    if "user" in session: 
+    if "user" in session:
         return redirect("/feed")
     return render_template("index.html")
 
+# authentication route
 @app.route("/authenticate", methods = ["POST", "GET"])
 def auth():
     """
@@ -32,7 +33,7 @@ def auth():
     """
 
     loginStatus = ''
-    
+
     # if user got here manually, redirect to root
     if request.method == "GET" or "user" not in request.form.keys():
         return redirect('/')
@@ -42,15 +43,30 @@ def auth():
         loginStatus = auth.createAccount(request.form["user"], request.form["pass1"], request.form["pass2"])
     else:
         loginStatus = auth.checkInfo(request.form["user"], request.form["pass"])
-    
+
     # if user successfull logs in, redirects to their feed
     if loginStatus in ["Account creation successful", "Login Successful"]:
         session["user"] = request.form["user"]
         return redirect("/feed")
 
+# for logged in users: their complete page
 @app.route("/feed")
 def feed():
+    # if user not logged in redirect them
+    if not("user" in session):
+        return redirect("/")
+
+    # otherwise, load the feed
     return render_template("feed.html")
+
+# logout route
+@app.route("/logout")
+def logout():
+    # pop user from session and redirect to login page(root)
+    if "user" in session:
+        session.pop("user")
+        flash("You have been logged out successfully!")
+    return redirect("/")
 
 # run flask app with debug set to true
 if __name__ == "__main__":

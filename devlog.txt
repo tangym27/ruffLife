@@ -39,6 +39,11 @@ and our beautiful website. Not to mention there is an animal themed weather site
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+aaronL -- 2018-11-27 12:19
+--------------------------------------------------------------
+- finished the feed route and logout route
+==============================================================
+
 aaronL -- 2018-11-26 17:06
 --------------------------------------------------------------
 - did the feed route and finished authentication
@@ -65,16 +70,16 @@ michelleT -- 2018-11-25 23:36
 michelleT -- 2018-11-25 13:49
 --------------------------------------------------------------
 - Fixed the components’ front end by adding the weather section
-- separated the component map to  into different sections 
-- redid the component map image to incorporate the database usage 
+- separated the component map to  into different sections
+- redid the component map image to incorporate the database usage
 ==============================================================
 
-aaronL -- 2018-11-21 12:49 
+aaronL -- 2018-11-21 12:49
 --------------------------------------------------------------
-- started working on flask app.py 
+- started working on flask app.py
 ==============================================================
 
-aaronL -- 2018-11-21 12:44 
+aaronL -- 2018-11-21 12:44
 --------------------------------------------------------------
 - Fixed the components’ front end by adding the weather section
 - elaborated on use of database schema
@@ -86,7 +91,7 @@ kaitlinW -- 2018-11-21 14:00
 - updating sitemap, update interactions between pages
 ==============================================================
 
-michelleT, aaronL, kaitlinW, boL -- 2018-11-21 12:22 
+michelleT, aaronL, kaitlinW, boL -- 2018-11-21 12:22
 --------------------------------------------------------------
 - reviewed comments and feedback
 ==============================================================
@@ -101,8 +106,8 @@ michelleT, aaronL, kaitlinW, boL -- 2018-11-20 12:29
 worked on design doc - divided + conquered
 - m: component map
 - a: database design
-- k: sitemap 
-- b: researching apis 
+- k: sitemap
+- b: researching apis
 ==============================================================
 
 michelleT, aaronL, kaitlinW, boL -- 2018-11-19 12:29
