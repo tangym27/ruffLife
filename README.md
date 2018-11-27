@@ -11,7 +11,8 @@ Using RESTful APIs to help stressful users relax mentally by looking at various 
 * catpic
 * OPENWeather
 * Geek jokes
-* Random
+* RandomCat
+* Quote of the day
 
 ## Instructions to Run:
 
