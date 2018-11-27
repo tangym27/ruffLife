@@ -9,7 +9,7 @@ def accCreator(user, pswd, confirmPswd)
     inputted confirmation password matches the password they inputted, to make 
     sure their password is what they want it to be.'''
 
-    db = sqlite3.connect("data/info.db")
+    db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
 
     #does account exist?
@@ -43,7 +43,7 @@ def confirmInfo(user,pswd):
     to see if the inputted data matches what we have in our database. It will
     return an appropriate error msg if it doesn't succeed.'''
 
-    db = sqlite3.connect("data/info.db")
+    db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
 
     #seaches for password of inputted user
