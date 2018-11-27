@@ -2,6 +2,17 @@
 # Xiaojie (Aaron) Li, Bo Hui Lu, Michelle Tang, Kaitlin Wan
 P #01: ArRESTed Development
 
+## Project Description
+Using RESTful APIs to help stressful users relax mentally by looking at various memes, aesthetically pleasing animals(just dogs and cats), or funny jokes. The user will laugh, smile, and appreciate the wonder of animals and our beautiful website. Not to mention there is an animal themed weather site as well! Logged in users get to experience this all on a single webpage while guest users will be redirected to a new page each time.
+
+## APIs
+**Here are some APIs that we use:**
+
+* catpic
+* OPENWeather
+* Geek jokes
+* Random
+
 ## Instructions to Run:
 
 1. Check to see if you have python3 installed by running ``` python3 ``` in the terminal. It should produce something like: 
