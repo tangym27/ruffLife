@@ -22,7 +22,7 @@ def accCreator(user, pswd, confirmPswd)
     for i in c.execute("SELECT username FROM userinfo WHERE username = ?", (user,)):
         db.close()
         return "Aww shucks, your username is taken already! You should go find and 
-marry that person, you two must have great compatiblity"
+marry that person though, you two must have great compatiblity"
 
 
     #now,does the password match?
