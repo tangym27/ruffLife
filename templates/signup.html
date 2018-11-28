@@ -12,6 +12,16 @@ Project 1 - ArRESTed Development
     <title>{% block header %}{% endblock %}</title>
   </head>
   <body>
+    {% block body %}
+
+    <form action="/signup">
+        <input type="text" name="user" placeholder="Username">
+        <input type="password" name="pass" placeholder="Password">
+        <br><br>
+        <input type="submit" value="Submit!" />
+    </form>
+
+    {% end block %}
 
   </body>
 </html>

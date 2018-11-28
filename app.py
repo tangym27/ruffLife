@@ -68,6 +68,11 @@ def logout():
         flash("You have been logged out successfully!")
     return redirect("/")
 
+@app.route("/signup")
+def feed():
+    # otherwise, load the feed
+    return render_template("signup.html")
+
 # run flask app with debug set to true
 if __name__ == "__main__":
     app.run(debug = True)
