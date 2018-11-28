@@ -73,6 +73,51 @@ def signup():
     # otherwise, load the feed
     return render_template("signup.html")
 
+@app.route("/home")
+def homeee():
+    # otherwise, load the feed
+    return redirect("/")
+
+@app.route("/feed")
+def logginnn():
+    # otherwise, load the feed
+    return render_template("feed.html")
+
+@app.route("/joke")
+def joke():
+    # otherwise, load the feed
+    return render_template("joke.html")
+
+@app.route("/weather")
+def weather():
+    # otherwise, load the feed
+    return render_template("weather.html")
+
+@app.route("/quote")
+def quote():
+    # otherwise, load the feed
+    return render_template("quote.html")
+
+@app.route("/catpic")
+def catpic():
+    # otherwise, load the feed
+    return render_template("catpic.html")
+
+@app.route("/dogpic")
+def dogpic():
+    # otherwise, load the feed
+    return render_template("dogpic.html")
+
+@app.route("/fact")
+def fact():
+    # otherwise, load the feed
+    return render_template("fact.html")
+
+@app.route("/meme")
+def meme():
+    # otherwise, load the feed
+    return render_template("meme.html")
+
 # run flask app with debug set to true
 if __name__ == "__main__":
     app.run(debug = True)
