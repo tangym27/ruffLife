@@ -1,3 +1,8 @@
+#ruffLife
+#Michelle Tang, Bo Hui Lu, Aaron Li, Kaitlin Wan
+#SoftDev1 pd6
+#Project 1 - ArRESTed Development
+
 import sqlite3
 
 db = sqlite3.connect("../data/fluffy.db")

@@ -1,3 +1,9 @@
+#ruffLife
+#Michelle Tang, Bo Hui Lu, Aaron Li, Kaitlin Wan
+#SoftDev1 pd6
+#Project 1 - ArRESTed Development
+
+
 import flask import Flask
 import sqlite3
 
