@@ -8,23 +8,27 @@ Project 1 - ArRESTed Development
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>{% block header %}{% endblock %}</title>
-  </head>
-  <body>
-
-    <h2> WELCOME TO RUFFLIFE </h2>
+</head>
+<body>
+    {% block body %}
 
     <center>
-    <h2>Please login below</h2>
-    <form action="/">
-      <input type="text" name="user" placeholder="Username">
-      <input type="text" name="pass" placeholder="Password">
-      <br><br>
-      <input type="submit" value="Submit!" />
-    </form>
-    
-</center>
+        <h2> WELCOME TO RUFFLIFE </h2>
+        <h2>Please login below</h2>
+        <form action="/authenticate">
+            <input type="text" name="user" placeholder="Username">
+            <input type="text" name="pass" placeholder="Password">
+            <br><br>
+            <input type="submit" value="Submit!" />
+        </form>
+        <br>
+        <form action="/logout">
+            <input type="submit" value="Logout">
+        </form>
+        {% endblock %}
+    </center>
 
-  </body>
+</body>
 </html>
