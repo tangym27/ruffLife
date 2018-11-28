@@ -39,10 +39,17 @@ and our beautiful website. Not to mention there is an animal themed weather site
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+aaronL, kaitlinW, boL -- 2018-11-27 11:59
+--------------------------------------------------------------
+- working on feed site
+- updated index.html and app.py
+- fixed spacing of python
+==============================================================
+
 aaronL, boL, michelleT, kaitlinW -- 2018-11-27 12:43
 --------------------------------------------------------------
-K: creating base.html for our landing page & developing css 
-B: adding authentication and account creation 
+K: creating base.html for our landing page & developing css
+B: adding authentication and account creation
 A: editing readme for clarification
 M: fixing our design doc bc our component map does not exist
 ==============================================================
