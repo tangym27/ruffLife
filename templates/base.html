@@ -8,8 +8,8 @@ Project 1 - ArRESTed Development
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../static/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../static/ruff.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='ruffLife.css')}}">
     <title>{% block header %}{% endblock %}</title>
   </head>
   <body>
@@ -25,7 +25,6 @@ Project 1 - ArRESTed Development
     <a href="/quote">Inspirational Quote</a>
     <a href="/weather">Weather</a>
       </nav>
-
     {% endblock %}
 
 
