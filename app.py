@@ -69,7 +69,7 @@ def logout():
     return redirect("/")
 
 @app.route("/signup")
-def feed():
+def signup():
     # otherwise, load the feed
     return render_template("signup.html")
 
