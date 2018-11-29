@@ -12,6 +12,12 @@ Project 1 - ArRESTed Development
     <title>{% block header %}DogPic!{% endblock %}</title>
   </head>
   <body>
+{% block body %}
+  <img src="https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&h=350">
 
+  <form action = "/dogpic" method = "POST">
+    <input type = "submit" value="Like Photo">
+  </form>
+{%endblock%}
   </body>
 </html>
