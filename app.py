@@ -1,5 +1,6 @@
 # Team ruffLife: Xiaojie(Aaron) Li, Michelle Tang, Bo Hui Lu, Kaitlin Wan
 
+from util import auth
 from flask import Flask, request, render_template, session, url_for, redirect, flash
 
 import os
@@ -37,6 +38,10 @@ def auth():
     # if user got here manually, redirect to root
     if request.method == "GET" or "user" not in request.form.keys():
         return redirect('/')
+
+    print("\n\n\n\n------------------------------------\n\n\n")
+    print(auth.checkInfo(request.form["user"], request.form["pass"]))
+    # print("\n\nasdfasdf\n\n")
 
     # check login creation or login
     if "pass2" in request.form.keys():

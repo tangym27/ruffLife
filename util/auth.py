@@ -1,13 +1,14 @@
 from flask import Flask
 import sqlite3
 
-def checkInfo(user,pswd):
-    db = sqlite3.connect("data/info.db")
+def checkInfo(user, pswd):
+    db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     #Looks for the password of the inputted user
     for i in c.execute("SELECT pass FROM userInfo WHERE username = ?",(user,)):
          #If user is found and passwords match
-        if i[0] == pswd: return "Login Successful"
+        if i[0] == pswd:
+            return "Login Successful"
          #If passwords don't match
         else:
             db.close()
@@ -17,8 +18,8 @@ def checkInfo(user,pswd):
         db.close()
         return "User not found"
 
-def createAcc(user,pswd,passConf):
-    db = sqlite3.connect("data/info.db")
+def createAccount(user,pswd,passConf):
+    db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     #checks if the username already exists
     for i in c.execute("SELECT username FROM userInfo WHERE username = ?",(user,)):
@@ -35,4 +36,4 @@ def createAcc(user,pswd,passConf):
         db.close()
         return "Account creation successful"
 
-print(createAcc("abc","123","123")) #expect account creation successful
+print(createAccount("abc","123","123")) #expect account creation successful
