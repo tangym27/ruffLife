@@ -70,6 +70,7 @@ michelleT, aaronL, kaitlinW, boL -- 2018-11-20 20:30
 - worked on design doc
 ==============================================================
 
+
 michelleT, aaronL, kaitlinW, boL -- 2018-11-21 12:22
 --------------------------------------------------------------
 - reviewed comments and feedback
@@ -142,10 +143,7 @@ aaronL, kaitlinW, boL -- 2018-11-28 12:39
 - fixed spacing of python
 ==============================================================
 
-boL, aaronL, kaitlinW, michelleT -- 2018-11-29 12:30
+aaronL -- 2018-11-29 16:31
 --------------------------------------------------------------
-B: added data to db 
-A: linking authentication with backend (wip)
-K: navbar and hardcoded data
-M: worked on signup & hardcoded data 
+- got authentication and sesssions and login to work completely
 ==============================================================

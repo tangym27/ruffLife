@@ -1,6 +1,6 @@
 # Team ruffLife: Xiaojie(Aaron) Li, Michelle Tang, Bo Hui Lu, Kaitlin Wan
 
-from util import auth
+from utils import auth
 from flask import Flask, request, render_template, session, url_for, redirect, flash
 
 import os
@@ -25,7 +25,7 @@ def home():
 
 # authentication route
 @app.route("/authenticate", methods = ["POST", "GET"])
-def auth():
+def authenticate():
     """
     If a user enters authenticate route manually(without logging in), redirect them back to the right road.
     If a user enters authenticate route after submitting a form:
@@ -39,20 +39,26 @@ def auth():
     if request.method == "GET" or "user" not in request.form.keys():
         return redirect('/')
 
-    print("\n\n\n\n------------------------------------\n\n\n")
-    print(auth.checkInfo(request.form["user"], request.form["pass"]))
-    # print("\n\nasdfasdf\n\n")
-
     # check login creation or login
     if "pass2" in request.form.keys():
+        print("\n\nCREATING ACCOUNT\n")
         loginStatus = auth.createAccount(request.form["user"], request.form["pass1"], request.form["pass2"])
     else:
+        print("\n\nCHECKING INFO\n")
         loginStatus = auth.checkInfo(request.form["user"], request.form["pass"])
 
     # if user successfull logs in, redirects to their feed
-    if loginStatus in ["Account creation successful", "Login Successful"]:
+    if loginStatus == "Account creation successful":
         session["user"] = request.form["user"]
+        flash(loginStatus + ". Please Log In Below")
+        return render_template("index.html")
+    elif loginStatus == "Login Successful":
+        session["user"] = request.form["user"]
+        flash(loginStatus)
         return redirect("/feed")
+    else:
+        flash(loginStatus)
+        return redirect("/")
 
 # for logged in users: their complete page
 @app.route("/feed")
