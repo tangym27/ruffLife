@@ -39,86 +39,21 @@ and our beautiful website. Not to mention there is an animal themed weather site
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-kaitlinW -- 2018-11-28 16:30
+aaronL -- 2018-11-16 12:25
 --------------------------------------------------------------
-- input Dummy Data
+- added project description/title
+- added devlog template instead of plain file
+- added flask app.py template
 ==============================================================
 
-aaronL, kaitlinW, boL -- 2018-11-28 11:59
+michelleT, aaronL, kaitlinW, boL -- 2018-11-16 12:17
 --------------------------------------------------------------
-- working on feed site
-- updated index.html and app.py
-- fixed spacing of python
+- created repo and discussed our design doc
 ==============================================================
 
-aaronL, boL, michelleT, kaitlinW -- 2018-11-27 12:43
+michelleT, aaronL, kaitlinW, boL -- 2018-11-19 12:29
 --------------------------------------------------------------
-K: creating base.html for our landing page & developing css
-B: adding authentication and account creation
-A: editing readme for clarification
-M: fixing our design doc bc our component map does not exist
-==============================================================
-
-aaronL -- 2018-11-27 12:19
---------------------------------------------------------------
-- finished the feed route and logout route
-==============================================================
-
-aaronL -- 2018-11-26 17:06
---------------------------------------------------------------
-- did the feed route and finished authentication
-==============================================================
-
-aaronL -- 2018-11-26 12:16
---------------------------------------------------------------
-- did root route and login of flask app
-- working on authentication route of login
-==============================================================
-
-boL -- 2018-11-26 12:15
---------------------------------------------------------------
-- incorporating user storage in the front end component section in design doc
-- began working on util folder w/ acc and db creation
-==============================================================
-
-
-michelleT -- 2018-11-25 23:36
---------------------------------------------------------------
-- added templates&html files in preparation for my absence tmrw
-==============================================================
-
-michelleT -- 2018-11-25 13:49
---------------------------------------------------------------
-- Fixed the components’ front end by adding the weather section
-- separated the component map to  into different sections
-- redid the component map image to incorporate the database usage
-==============================================================
-
-aaronL -- 2018-11-21 12:49
---------------------------------------------------------------
-- started working on flask app.py
-==============================================================
-
-aaronL -- 2018-11-21 12:44
---------------------------------------------------------------
-- Fixed the components’ front end by adding the weather section
-- elaborated on use of database schema
-- describe APIs
-==============================================================
-
-kaitlinW -- 2018-11-21 14:00
---------------------------------------------------------------
-- updating sitemap, update interactions between pages
-==============================================================
-
-michelleT, aaronL, kaitlinW, boL -- 2018-11-21 12:22
---------------------------------------------------------------
-- reviewed comments and feedback
-==============================================================
-
-michelleT, aaronL, kaitlinW, boL -- 2018-11-20 20:30
---------------------------------------------------------------
-- worked on design doc
+- worked on design doc (including site map, component map, and distribution of functions)
 ==============================================================
 
 michelleT, aaronL, kaitlinW, boL -- 2018-11-20 12:29
@@ -130,19 +65,80 @@ worked on design doc - divided + conquered
 - b: researching apis
 ==============================================================
 
-michelleT, aaronL, kaitlinW, boL -- 2018-11-19 12:29
+michelleT, aaronL, kaitlinW, boL -- 2018-11-20 20:30
 --------------------------------------------------------------
-- worked on design doc (including site map, component map, and distribution of functions)
+- worked on design doc
 ==============================================================
 
-aaronL -- 2018-11-16 12:25
+
+michelleT, aaronL, kaitlinW, boL -- 2018-11-21 12:22
 --------------------------------------------------------------
-- added project description/title
-- added devlog template instead of plain file
-- added flask app.py template
+- reviewed comments and feedback
 ==============================================================
 
-michelleT, aaronL, kaitlinW, boL -- 2018-11-16 12:17
+kaitlinW -- 2018-11-21 14:00
 --------------------------------------------------------------
-- created repo and discussed our design doc
+- updating sitemap, update interactions between pages
+==============================================================
+
+aaronL -- 2018-11-21 12:44
+--------------------------------------------------------------
+- Fixed the components’ front end by adding the weather section
+- elaborated on use of database schema
+- describe APIs
+==============================================================
+
+aaronL -- 2018-11-21 12:49
+--------------------------------------------------------------
+- started working on flask app.py
+==============================================================
+
+michelleT -- 2018-11-25 13:49
+--------------------------------------------------------------
+- Fixed the components’ front end by adding the weather section
+- separated the component map to  into different sections
+- redid the component map image to incorporate the database usage
+==============================================================
+
+
+michelleT -- 2018-11-25 23:36
+--------------------------------------------------------------
+- added templates&html files in preparation for my absence tmrw
+==============================================================
+
+boL -- 2018-11-26 12:15
+--------------------------------------------------------------
+- incorporating user storage in the front end component section in design doc
+- began working on util folder w/ acc and db creation
+==============================================================
+
+aaronL -- 2018-11-26 12:16
+--------------------------------------------------------------
+- did root route and login of flask app
+- working on authentication route of login
+==============================================================
+
+aaronL -- 2018-11-26 17:06
+--------------------------------------------------------------
+- did the feed route and finished authentication
+==============================================================
+
+aaronL -- 2018-11-27 12:19
+--------------------------------------------------------------
+- finished the feed route and logout route
+==============================================================
+
+aaronL, boL, michelleT, kaitlinW -- 2018-11-27 12:43
+--------------------------------------------------------------
+K: creating base.html for our landing page & developing css
+B: adding authentication and account creation
+A: editing readme for clarification
+M: fixing our design doc bc our component map does not exist
+==============================================================
+
+aaronL, kaitlinW, boL -- 2018-11-28 12:39
+--------------------------------------------------------------
+- working on feed site
+- updated index.html and app.py
+- fixed spacing of python
 ==============================================================
