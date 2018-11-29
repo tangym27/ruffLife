@@ -70,7 +70,6 @@ michelleT, aaronL, kaitlinW, boL -- 2018-11-20 20:30
 - worked on design doc
 ==============================================================
 
-
 michelleT, aaronL, kaitlinW, boL -- 2018-11-21 12:22
 --------------------------------------------------------------
 - reviewed comments and feedback
@@ -141,4 +140,12 @@ aaronL, kaitlinW, boL -- 2018-11-28 12:39
 - working on feed site
 - updated index.html and app.py
 - fixed spacing of python
+==============================================================
+
+boL, aaronL, kaitlinW, michelleT -- 2018-11-29 12:30
+--------------------------------------------------------------
+B: added data to db 
+A: linking authentication with backend (wip)
+K: navbar and hardcoded data
+M: worked on signup & hardcoded data 
 ==============================================================
