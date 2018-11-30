@@ -1,9 +1,15 @@
 # Team ruffLife: Xiaojie(Aaron) Li, Michelle Tang, Bo Hui Lu, Kaitlin Wan
-
-from utils import auth
-from flask import Flask, request, render_template, session, url_for, redirect, flash
+# SoftDev1 pd6
+# P#01 -- arRESTed Development
+# 2018-11-30
 
 import os
+import json
+import urllib
+
+from utils import auth
+
+from flask import Flask, request, render_template, session, url_for, redirect, flash
 
 # instantiate flask app
 app = Flask(__name__)
@@ -111,13 +117,21 @@ def quote():
 
 @app.route("/catpic")
 def catpic():
+    url = "https://aws.random.cat/meow"
+    s = urllib.request.urlopen(url)
+    s = s.read()
+    d = json.loads(s)
     # otherwise, load the feed
-    return render_template("catpic.html")
+    return render_template("catpic.html", link = d['file'])
 
 @app.route("/dogpic")
 def dogpic():
+    url = "https://random.dog/woof.json"
+    s = urllib.request.urlopen(url)
+    s = s.read()
+    d = json.loads(s)
     # otherwise, load the feed
-    return render_template("dogpic.html")
+    return render_template("dogpic.html", link = d['url'])
 
 @app.route("/fact")
 def fact():

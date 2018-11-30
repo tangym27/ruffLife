@@ -9,15 +9,19 @@ Project 1 - ArRESTed Development
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% block header %}DogPic!{% endblock %}</title>
+    <title>{% block header %}Dog Pic!{% endblock %}</title>
   </head>
   <body>
 {% block body %}
-  <img src="https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&h=350">
+  <center>
+    <img width = 600px height= 600px src= {{ link }}>
+    <br>
+      <form action = "/catpic" method = "GET">
+        <input type = "submit" value = "Get another photo!">
+        <input type = "submit" value="Like Photo">
+      </form>
+  </center>
 
-  <form action = "/dogpic" method = "POST">
-    <input type = "submit" value="Like Photo">
-  </form>
 {%endblock%}
   </body>
 </html>
