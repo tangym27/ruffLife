@@ -125,10 +125,10 @@ aaronL, kaitlinW, boL -- 2018-11-28 12:39
 
 boL, aaronL, kaitlinW, michelleT -- 2018-11-29 12:39
 --------------------------------------------------------------
-- B: added data to db 
+- B: added data to db
 - A: linking authentication with backend (wip)
 - K: navbar and hardcoded data
-- M: worked on signup & hardcoded data 
+- M: worked on signup & hardcoded data
 ==============================================================
 
 aaronL -- 2018-11-29 16:31
@@ -140,4 +140,9 @@ boL -- 2018-11-30 12:30
 --------------------------------------------------------------
 - Added methods to add an user's liked memes and animal pics into the database.
 
+==============================================================
+
+aaronL -- 2018-11-30 12:33
+--------------------------------------------------------------
+- worked on feed, made the custom styles and added the website icon
 ==============================================================
