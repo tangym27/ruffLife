@@ -3,16 +3,19 @@
 P #01: ArRESTed Development
 
 ## Project Description
-Using RESTful APIs to help stressful users relax mentally by looking at various memes, aesthetically pleasing animals(just dogs and cats), or funny jokes. The user will laugh, smile, and appreciate the wonder of animals and our beautiful website. Not to mention there is an animal themed weather site as well! Logged in users get to experience this all on a single webpage while guest users will be redirected to a new page each time.
+Using RESTful APIs to help stressful users relax mentally by looking at various memes, aesthetically pleasing animals(just dogs and cats), or funny jokes. The user will laugh, smile, and appreciate the wonder of animals and our beautiful website. Not to mention there is an animal themed weather site as well! If they enjoy something, they can log in and earmark it for future viewings. Logged in users get to experience this all on a single webpage while guest users will be redirected to a new page each time.
 
 ## APIs
-**Here are some APIs that we use:**
+**Here are the APIs that we use & how to procure keys:**
 
-* catpic
-* OPENWeather
-* Geek jokes
-* RandomCat
-* Quote of the day
+API Name | Link | Notes
+--- | --- | ---
+catpic | https://aws.random.cat/meow  | no key needed and unlimited quotas! 
+dogpic | https://random.dog | no key needed and unlimited quotas!
+catfact | https://catfact.ninja/ | no key needed and unlimited quotas!
+geek jokes | https://github.com/sameerkumar18/geek-joke-api/api | no key needed and unlimited quotas!
+weather | https://openweathermap.org/api/ | no key but a limit of 60 calls per minute
+joke of the day | https://favqs.com/api/ | no key and unlimited quotas!
 
 ## Instructions to Run:
 
@@ -42,3 +45,9 @@ $ sudo pip install Flask
 * Debugger is active!
 * Debugger PIN: 248-748-502
 ```
+  
+ ## Dependencies: 
+ 1. python
+ 2. virtual environment
+ 3. flask 
+ 4. wheel
