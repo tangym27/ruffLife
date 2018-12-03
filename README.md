@@ -25,12 +25,12 @@ Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 26 2018, 20:42:06)
 [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 ```
-2. Install virtualenv and create your own environment by running the following in terminal. Replace <VENV> with the name of your virtual environment (your choice).
+2. Install python3-venv and create your own environment by running the following in terminal. Replace <VENV> with the name of your virtual environment (your choice).
 ```
-$ sudo pip install virtualenv
-$ virtualenv <VENV>
+$ sudo apt install python3-venv
+$ python3 -m venv <VENV>
 ```
-3. Activate the virtual environment by typing ```$ . <VENV>/bin/activate``` in the terminal. Make sure you are in the directory which contains the virtual environment. To check, type in ```ls``` to get a current listing of the files in your current working directory.  
+3. Activate the virtual environment by typing ```$ . PATH_TO_VENV/bin/activate``` in the terminal. Make sure you are in the directory which contains the virtual environment. To check, type in ```ls``` to get a current listing of the files in your current working directory.  
 4. Install the following dependencies:
 ```
 $ sudo pip install wheel
