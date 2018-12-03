@@ -1,10 +1,17 @@
+#ruffLife
+#Michelle Tang, Bo Hui Lu, Aaron Li, Kaitlin Wan
+#SoftDev1 pd6
+#Project 1 - ArRESTed Development
+
 from flask import Flask
 import sqlite3
 
 
-'''This method checks if the user and password combination
-is a valid one, and returns error messages accordingly'''
 def checkInfo(user, pswd):
+    
+    '''This method checks if the user and password combination
+    is a valid one, and returns error messages accordingly'''
+    
     db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     #Looks for the password of the inputted user
@@ -23,10 +30,12 @@ def checkInfo(user, pswd):
 
     
 
-    '''This method checks the user's input when creating an acc
-to make sure they did not err anywhere in the process. If everything
-is correct, then the account will be created.'''
 def createAccount(user,pswd,passConf):
+    
+    '''This method checks the user's input when creating an acc
+    to make sure they did not err anywhere in the process. If everything
+    is correct, then the account will be created.'''
+    
     db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     #checks if the username already exists
@@ -46,10 +55,12 @@ def createAccount(user,pswd,passConf):
 
 
     
-'''This method adds the url of a animal picture that the user
-liked. It will also check to see if the user tried to add an url more
-than once, and will prevent the user from doing that.'''
 def addAnimal(url):
+    
+    '''This method adds the url of a animal picture that the user
+    liked. It will also check to see if the user tried to add an url more
+    than once, and will prevent the user from doing that.'''
+    
     db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
 
@@ -68,10 +79,13 @@ def addAnimal(url):
         return "This has been moved into your favorites."
 
 
-    '''This method adds the url of a meme that the user
-liked. It will also check to see if the user tried to add an url more
-than once, and will prevent the user from doing that.'''
+
 def addMeme(url):
+    
+    '''This method adds the url of a meme that the user
+    liked. It will also check to see if the user tried to add an url more
+    than once, and will prevent the user from doing that.'''
+    
     db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
 
