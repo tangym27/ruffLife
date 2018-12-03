@@ -14,18 +14,22 @@ Project 1 - ArRESTed Development
 <body>
     {% block body %}
     <center>
-    {% set msgs = get_flashed_messages() %}
-    {% for each in msgs%}
-    {{each}}
-    {% endfor %}
+      <img src="/static/logoruff.png" alt="logo" width="250">
         <h2> WELCOME TO RUFFLIFE </h2>
         <h2>Please login below</h2>
-        <form action="/authenticate">
-            <input type="text" name="user" placeholder="Username">
-            <input type="text" name="pass" placeholder="Password">
-            <br><br>
-            <input type="submit" value="Submit!" />
-        </form>
+        <div class="container">
+          <div class="row">
+            <form action="/authenticate">
+                <input type="text" name="user" placeholder="Username">
+                <input type="text" name="pass" placeholder="Password">
+                <br><br>
+                <input type="submit" value="Submit!" />
+            </form>
+                
+          </div>
+
+        </div>
+
         <br>
         <form action="/logout">
             <input type="submit" value="Logout">
@@ -34,6 +38,12 @@ Project 1 - ArRESTed Development
         <form action="/signup">
             <input type="submit" value="Sign Up HERE!">
         </form>
+
+        {% set msgs = get_flashed_messages() %}
+        {% for each in msgs%}
+        {{each}}
+        {% endfor %}
+
         {% endblock %}
     </center>
 
