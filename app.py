@@ -8,7 +8,7 @@ import json
 import urllib
 
 
-from utils import userMethods
+from util import userMethods
 
 from flask import Flask, request, render_template, session, url_for, redirect, flash
 
