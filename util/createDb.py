@@ -18,6 +18,12 @@ c.execute("""CREATE TABLE IF NOT EXISTS userInfo(
             fav_Meme TEXT)"""
             )
 
+'''user's likes table'''
+c.execute("""fav_Animal TEXT,
+fav_Meme TEXT)"""
+)
+
+
 '''quotes table'''
 c.execute("""CREATE TABLE IF NOT EXISTS quotes(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
