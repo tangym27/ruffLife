@@ -6,9 +6,9 @@
 import os
 import json
 import urllib
-import requests
 
-from utils import user
+
+from utils import usermethod
 
 from flask import Flask, request, render_template, session, url_for, redirect, flash
 
