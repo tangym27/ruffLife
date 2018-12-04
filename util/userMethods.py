@@ -65,7 +65,7 @@ def addAnimal(url):
     c = db.cursor()
 
     #checks to see if the user has already liked the animal picture
-    for i in c.execute("SELECT fav_Animal FROM userInfo WHERE fav_Animal = ?",(url,)):
+    for i in c.execute("SELECT fav_Animal FROM userLikes WHERE fav_Animal = ?",(url,)):
         db.close()
 
         return "Wow, you seem to really like this picture! Unfortunately, you've already added it before."
@@ -73,7 +73,7 @@ def addAnimal(url):
     #adds picture to the database
     else:
 
-        c.execute("INSERT INTO userInfo (fav_Animal) VALUES(?)",(url,))
+        c.execute("INSERT INTO userLikes (fav_Animal) VALUES(?)",(url,))
         db.commit()
         db.close()
         return "This has been moved into your favorites."
@@ -90,7 +90,7 @@ def addMeme(url):
     c = db.cursor()
 
     #checks to see if the user has already liked the meme
-    for i in c.execute("SELECT fav_Meme FROM userInfo WHERE fav_Meme = ?",(url,)):
+    for i in c.execute("SELECT fav_Meme FROM userLikes WHERE fav_Meme = ?",(url,)):
         db.close()
 
         return "Wow, you seem to really like this meme! Unfortunately, you've already added it before."
@@ -98,7 +98,7 @@ def addMeme(url):
     #adds meme to the database
     else:
 
-        c.execute("INSERT INTO userInfo (fav_Meme) VALUES(?)",(url,))
+        c.execute("INSERT INTO userLikes (fav_Meme) VALUES(?)",(url,))
         db.commit()
         db.close()
         return "This has been moved into your favorites."

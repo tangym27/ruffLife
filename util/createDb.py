@@ -13,13 +13,14 @@ c = db.cursor()
 c.execute("""CREATE TABLE IF NOT EXISTS userInfo(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT UNIQUE,
-            pass TEXT,
-            fav_Animal TEXT,
-            fav_Meme TEXT)"""
+            pass TEXT
+            )"""
             )
 
 '''user's likes table'''
-c.execute("""fav_Animal TEXT,
+c.execute("""CREATE TABLE IF NOT EXISTS userLikes(
+username TEXT UNIQUE,
+fav_Animal TEXT,
 fav_Meme TEXT)"""
 )
 

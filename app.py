@@ -8,7 +8,7 @@ import json
 import urllib
 import requests
 
-from utils import auth
+from utils import user
 
 from flask import Flask, request, render_template, session, url_for, redirect, flash
 
@@ -49,10 +49,10 @@ def authenticate():
     # check login creation or login
     if "pass2" in request.form.keys():
         print("\n\nCREATING ACCOUNT\n")
-        loginStatus = auth.createAccount(request.form["user"], request.form["pass1"], request.form["pass2"])
+        loginStatus = userMethods.createAccount(request.form["user"], request.form["pass1"], request.form["pass2"])
     else:
         print("\n\nCHECKING INFO\n")
-        loginStatus = auth.checkInfo(request.form["user"], request.form["pass"])
+        loginStatus = userMethods.checkInfo(request.form["user"], request.form["pass"])
 
     # if user successfull logs in, redirects to their feed
     if loginStatus == "Account creation successful":
