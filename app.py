@@ -28,6 +28,8 @@ def home():
 
     if "user" in session:
         return redirect("/feed")
+    if 'Like Photo' in request.form.keys():
+
     return render_template("index.html")
 
 # authentication route
@@ -112,17 +114,6 @@ def logginnn():
     # otherwise, load the feed
     return render_template("feed.html")
 
-@app.route("/joke")
-def joke():
-    url = 'https://icanhazdadjoke.com/'
-    s = urllib.request.urlopen(url)
-    s = s.read()
-    print(s)
-    d = json.loads(s)
-    print(d)
-    # otherwise, load the feed
-    return render_template("joke.html")
-
 @app.route("/weather")
 def weather():
     # otherwise, load the feed
@@ -131,7 +122,11 @@ def weather():
 @app.route("/quote")
 def quote():
     # otherwise, load the feed
-    return render_template("quote.html")
+    url = 'https://favqs.com/api/qotd'
+    s = urllib.request.urlopen(url)
+    s = s.read()
+    d = json.loads(s)
+    return render_template("quote.html", link = d['body'])
 
 @app.route("/catpic")
 def catpic():
@@ -139,6 +134,7 @@ def catpic():
     s = urllib.request.urlopen(url)
     s = s.read()
     d = json.loads(s)
+    flash("LOG IN TO LIKE PHOTOS!!")
     # otherwise, load the feed
     return render_template("catpic.html", link = d['file'])
 
