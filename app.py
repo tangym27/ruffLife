@@ -75,8 +75,18 @@ def feed():
         flash("You are not logged in.")
         return redirect("/")
 
+    url = "https://random.dog/woof.json"
+    status = True;
+    while(status):
+        s = urllib.request.urlopen(url)
+        s = s.read()
+        d = json.loads(s)
+        print(d["url"][-3:])
+        if(d["url"][-3:] != "mp4"):
+            status = False
+
     # otherwise, load the feed
-    return render_template("feed.html")
+    return render_template("feed.html", link = d['url'])
 
 # logout route
 @app.route("/logout")

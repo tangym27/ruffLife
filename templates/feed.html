@@ -26,7 +26,13 @@ Project 1 - ArRESTed Development
 
     <!-- Custom styles for this template -->
     <link href="../static/feed.css" rel="stylesheet">
+    <style>
+    .limited {
+        max-height: 70%;
+        max-width: 70%;
+    }
 
+    </style>
 </head>
 
 <body id="page-top">
@@ -91,16 +97,16 @@ Project 1 - ArRESTed Development
 
                 <div class="feed-item d-flex flex-column flex-md-row mb-5">
                     <div class="feed-content mr-auto">
-                        <h3 class="mb-0">Here be random doge</h3>
+                        <h3 class="mb-0">Here be random doge. Aren't they just cute?</h3>
                         <!-- <div class="subheading mb-3">Intelitec Solutions</div> -->
-                        <img width = 50% src="{{ link }}" alt = "reload">
+                        <img class="limited" src="{{ link }}" alt = "reload">
                         <form action = "/catpic" method = "GET">
                             <input type = "submit" value = "Get another photo!">
                             <input type = "submit" value="Like Photo">
                         </form>
                     </div>
                     <div class="feed-date text-md-right">
-                        <span class="text-primary">March 2013 - Present</span>
+                        <span class="text-primary"><a href="{{ link }}" target="_blank">Link to Pic</a></span>
                     </div>
                 </div>
 
