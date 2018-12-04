@@ -9,14 +9,14 @@ Project 1 - ArRESTed Development
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='ruffLife.css')}}">
+  <link rel="stylesheet" type="text/css" href="../static/ruff.css">
   <title>{% block header %}{% endblock %}</title>
 </head>
 <body>
   <div container = 'navbar'>
-    <div class="container">
+    <div class="container-full-bg">
     <nav class="navbar sticky-top navbar-dark bg-dark">
-    <button class="btn btn-md btn-outline-secondary" type="button"><a href="/home">Home</a></button>
+    <button class="btn btn-md btn-outline-secondary" type="button" ><a href="/">Home</a></button>
     <button class="btn btn-md btn-outline-secondary" type="button">      <a href="/feed">Personal Feed</a></button>
     <button class="btn btn-md btn-outline-secondary" type="button">    <a href="/catpic">Cat Picture</a></button>
     <button class="btn btn-md btn-outline-secondary" type="button">        <a href="/dogpic">Dog Picture</a></button>

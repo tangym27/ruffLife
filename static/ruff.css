@@ -10,6 +10,12 @@ html {
 }
 
 body {
-  background-color: "#e6f5ff"
+  background-color: "#e6f5ff";
 
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
 }
