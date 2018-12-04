@@ -23,25 +23,31 @@ Project 1 - ArRESTed Development
         <br><br>
         <h2> WELCOME TO RUFFLIFE </h2>
       </div>
-      <div>
 
-          <div class="row">
-          <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-4">
+            <h5>Login Here:</h5>
+          </div>
+          <div class="col-sm-8">
+
             <form action="/authenticate">
-              <p>Login Here:</p>
               <input type="text" name="user" placeholder="Username">
               <input type="password" name="pass" placeholder="Password">
               <input type="submit" value="Submit!" />
             </form>
-
           </div>
         </div>
+        <div class = 'row'>
+          <div class = 'col-sm-12'>
+          <br>
+            <div class = "signuper">
+            Don't have an account? Sign Up <a class= "sign" href="/signup">here</a>!
+            </div>
+      </div>
 
       </div>
 
-      <br>
-      <br>
-      Don't have an account? <br> Sign Up <a href="/signup">here</a>!
+
 
       {% set msgs = get_flashed_messages() %}
       {% for each in msgs%}

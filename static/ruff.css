@@ -19,3 +19,7 @@ a {
     text-decoration: none;
     background-color: transparent;
 }
+
+.signuper a{
+  color:rgb(30, 148, 173);
+}

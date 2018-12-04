@@ -102,6 +102,12 @@ def logginnn():
 
 @app.route("/joke")
 def joke():
+    url = "https://geek-jokes.sameerkumar.website/api"
+    s = urllib.request.urlopen(url)
+    s = s.read()
+    print(s)
+    d = json.loads(s)
+    print(d)
     # otherwise, load the feed
     return render_template("joke.html")
 
