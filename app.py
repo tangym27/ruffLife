@@ -6,6 +6,7 @@
 import os
 import json
 import urllib
+import requests
 
 from utils import auth
 
@@ -56,7 +57,7 @@ def authenticate():
     # if user successfull logs in, redirects to their feed
     if loginStatus == "Account creation successful":
         session["user"] = request.form["user"]
-        flash(loginStatus + ". Please Log In Below")
+        flash(loginStatus + ". To see your personal feed, login above.")
         return render_template("index.html")
     elif loginStatus == "Login Successful":
         session["user"] = request.form["user"]
@@ -71,6 +72,7 @@ def authenticate():
 def feed():
     # if user not logged in redirect them
     if not("user" in session):
+        flash("You are not logged in.")
         return redirect("/")
 
     # otherwise, load the feed
@@ -102,7 +104,7 @@ def logginnn():
 
 @app.route("/joke")
 def joke():
-    url = "https://geek-jokes.sameerkumar.website/api"
+    url = 'https://icanhazdadjoke.com/'
     s = urllib.request.urlopen(url)
     s = s.read()
     print(s)
