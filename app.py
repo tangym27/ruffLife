@@ -178,8 +178,13 @@ def dogpic():
 
 @app.route("/fact")
 def fact():
+    url = "http://randomuselessfact.appspot.com/random.json?language=en"
+    s = urllib.request.urlopen(url)
+    s = s.read()
+    d = json.loads(s)
+    flash("LOG IN TO LIKE ITEMS!!")
     # otherwise, load the feed
-    return render_template("fact.html")
+    return render_template("fact.html", link = d['text'])
 
 @app.route("/meme")
 def meme():
