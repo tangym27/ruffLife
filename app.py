@@ -126,7 +126,7 @@ def quote():
     s = urllib.request.urlopen(url)
     s = s.read()
     d = json.loads(s)
-    return render_template("quote.html", link = d['body'])
+    return render_template("quote.html", link = d['quote']['body'])
 
 @app.route("/catpic")
 def catpic():
