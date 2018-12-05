@@ -44,6 +44,7 @@ def authenticate():
     """
 
     loginStatus = ''
+    global username
 
     # if user got here manually, redirect to root
     if request.method == "GET" or "user" not in request.form.keys():
@@ -65,6 +66,7 @@ def authenticate():
         return render_template("index.html")
     elif loginStatus == "Login Successful":
         session["user"] = request.form["user"]
+        username = request.form["user"]
         flash(loginStatus)
         return redirect("/feed")
     else:
