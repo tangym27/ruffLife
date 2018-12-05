@@ -8,10 +8,10 @@ import sqlite3
 
 
 def checkInfo(user, pswd):
-    
+
     '''This method checks if the user and password combination
     is a valid one, and returns error messages accordingly'''
-    
+
     db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     #Looks for the password of the inputted user
@@ -28,14 +28,14 @@ def checkInfo(user, pswd):
         db.close()
         return "User not found"
 
-    
+
 
 def createAccount(user,pswd,passConf):
     
     '''This method checks the user's input when creating an acc
     to make sure they did not err anywhere in the process. If everything
     is correct, then the account will be created.'''
-    
+
     db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     #checks if the username already exists
@@ -55,78 +55,78 @@ def createAccount(user,pswd,passConf):
 
 
 
-    
-def addImage(user, url):
-    
-    '''This method adds the url of a animal picture that the user
-    liked, into the database.'''
-    
-    db = sqlite3.connect("data/fluffy.db")
-    c = db.cursor()
 
-    #adds picture to the database
-    c.execute("SELECT fav_Images FROM likedImages WHERE username = ?",(user))
-    newUrl = c.fetchall()
-    
-    print(newUrl)
-    
-    db.commit()
-    db.close()
-    return "0"
-
-
-    
-
-    
-def addImageOLDVERSION(url):
-    
-    '''This method adds the url of a animal picture that the user
-    liked. It will also check to see if the user tried to add an url more
-    than once, and will prevent the user from doing that.'''
-    
-    db = sqlite3.connect("data/fluffy.db")
-    c = db.cursor()
-
-    #checks to see if the user has already liked the animal picture
-    for i in c.execute("SELECT fav_Images FROM likedImages WHERE fav_Images = ?",(url,)):
-        db.close()
-
-        return "Wow, you seem to really like this picture! Unfortunately, you've already added it before."
-
-    #adds picture to the database
-    else:
-
-        #c.execute("INSERT INTO likedImages (fav_Images) VALUES(?)",(url,))
-        db.commit()
-        db.close()
-        return "This has been moved into your favorites."
+# def addImage(user, url):
+#
+#     '''This method adds the url of a animal picture that the user
+#     liked, into the database.'''
+#
+#     db = sqlite3.connect("data/fluffy.db")
+#     c = db.cursor()
+#
+#     #adds picture to the database
+#     c.execute("SELECT fav_Images FROM likedImages WHERE username = ?",(user))
+#     newUrl = c.fetchall()
+#
+#     print(newUrl)
+#
+#     db.commit()
+#     db.close()
+#     return "0"
 
 
 
-def addWordsOLDVERSION(url):
-    
-    '''This method adds the url of a meme that the user
-    liked. It will also check to see if the user tried to add an url more
-    than once, and will prevent the user from doing that.'''
-    
-    db = sqlite3.connect("data/fluffy.db")
-    c = db.cursor()
 
-    #checks to see if the user has already liked the meme
-    for i in c.execute("SELECT fav_Words FROM likedWords WHERE fav_Words = ?",(url,)):
-        db.close()
 
-        return "Wow, you seem to really like this meme! Unfortunately, you've already added it before."
+# def addImageOLDVERSION(url):
+#
+#     '''This method adds the url of a animal picture that the user
+#     liked. It will also check to see if the user tried to add an url more
+#     than once, and will prevent the user from doing that.'''
+#
+#     db = sqlite3.connect("data/fluffy.db")
+#     c = db.cursor()
+#
+#     #checks to see if the user has already liked the animal picture
+#     for i in c.execute("SELECT fav_Images FROM likedImages WHERE fav_Images = ?",(url,)):
+#         db.close()
+#
+#         return "Wow, you seem to really like this picture! Unfortunately, you've already added it before."
+#
+#     #adds picture to the database
+#     else:
+#
+#         #c.execute("INSERT INTO likedImages (fav_Images) VALUES(?)",(url,))
+#         db.commit()
+#         db.close()
+#         return "This has been moved into your favorites."
 
-    #adds meme to the database
-    else:
 
-        c.execute("INSERT INTO likedWords (fav_Words) VALUES(?)",(url,))
-        db.commit()
-        db.close()
-        return "This has been moved into your favorites."
-    
+
+# def addWordsOLDVERSION(url):
+#
+#     '''This method adds the url of a meme that the user
+#     liked. It will also check to see if the user tried to add an url more
+#     than once, and will prevent the user from doing that.'''
+#
+#     db = sqlite3.connect("data/fluffy.db")
+#     c = db.cursor()
+#
+#     #checks to see if the user has already liked the meme
+#     for i in c.execute("SELECT fav_Words FROM likedWords WHERE fav_Words = ?",(url,)):
+#         db.close()
+#
+#         return "Wow, you seem to really like this meme! Unfortunately, you've already added it before."
+#
+#     #adds meme to the database
+#     else:
+#
+#         c.execute("INSERT INTO likedWords (fav_Words) VALUES(?)",(url,))
+#         db.commit()
+#         db.close()
+#         return "This has been moved into your favorites."
+
 
 print(createAccount("abc","123","123")) #expect account creation successful
 
-print(addImage("abc", "fasdklfsdkl"))
+# print(addImage("abc", "fasdklfsdkl"))

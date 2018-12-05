@@ -7,5 +7,5 @@ import sqlite3
 import flask import Flask
 
 
-def addQuote(quote)
-    ''' This method adds the quotes that we received into 
+# def addQuote(quote)
+#     ''' This method adds the quotes that we received into
