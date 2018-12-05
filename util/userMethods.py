@@ -54,8 +54,31 @@ def createAccount(user,pswd,passConf):
         return "Account creation successful"
 
 
+
     
-def addAnimal(url):
+def addImage(user, url):
+    
+    '''This method adds the url of a animal picture that the user
+    liked, into the database.'''
+    
+    db = sqlite3.connect("data/fluffy.db")
+    c = db.cursor()
+
+    #adds picture to the database
+    c.execute("SELECT fav_Images FROM likedImages WHERE username = ?",(user))
+    newUrl = c.fetchall()
+    
+    print(newUrl)
+    
+    db.commit()
+    db.close()
+    return "0"
+
+
+    
+
+    
+def addImageOLDVERSION(url):
     
     '''This method adds the url of a animal picture that the user
     liked. It will also check to see if the user tried to add an url more
@@ -73,14 +96,14 @@ def addAnimal(url):
     #adds picture to the database
     else:
 
-        c.execute("INSERT INTO likedImages (fav_Images) VALUES(?)",(url,))
+        #c.execute("INSERT INTO likedImages (fav_Images) VALUES(?)",(url,))
         db.commit()
         db.close()
         return "This has been moved into your favorites."
 
 
 
-def addWords(url):
+def addWordsOLDVERSION(url):
     
     '''This method adds the url of a meme that the user
     liked. It will also check to see if the user tried to add an url more
@@ -105,3 +128,5 @@ def addWords(url):
     
 
 print(createAccount("abc","123","123")) #expect account creation successful
+
+print(addImage("abc", "fasdklfsdkl"))
