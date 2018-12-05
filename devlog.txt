@@ -187,3 +187,8 @@ aaronL -- 2018-12-04 22:34
 - finished doge sections, have refresh/like buttons and functionality
 - finished quote/cat/cat fact section
 ==============================================================
+
+aaronL -- 2018-12-05 12:18
+--------------------------------------------------------------
+- fixed welcome status on feed page
+==============================================================

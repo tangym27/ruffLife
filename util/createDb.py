@@ -17,19 +17,17 @@ c.execute("""CREATE TABLE IF NOT EXISTS userInfo(
             )"""
             )
 
-'''user's animal likes table'''
-c.execute("""CREATE TABLE IF NOT EXISTS userLikes(
-username TEXT UNIQUE,
-fav_Animal TEXT,
+'''user's liked images(animals, memes) table'''
+c.execute("""CREATE TABLE IF NOT EXISTS likedImages(
+            username TEXT UNIQUE,
+            fav_Images TEXT,
 )"""
 )
 
-'''TENTATIVE ADDITION'''
-'''user's liked memes table'''
-c.execute("""CREATE TABLE IF NOT EXISTS userLikes(
-username TEXT UNIQUE,
-fav_Animal TEXT,
-fav_Meme TEXT)"""
+'''user's liked quotes table'''
+c.execute("""CREATE TABLE IF NOT EXISTS likedWords(
+            username TEXT UNIQUE,
+            fav_Words TEXT)"""
 )
 
 

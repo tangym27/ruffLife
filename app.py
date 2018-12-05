@@ -28,6 +28,7 @@ def home():
     """
 
     if "user" in session:
+        print(request.form("user"))
         return redirect("/feed")
 
     return render_template("index.html")
@@ -43,6 +44,7 @@ def authenticate():
     """
 
     loginStatus = ''
+    global username
 
     # if user got here manually, redirect to root
     if request.method == "GET" or "user" not in request.form.keys():
@@ -60,9 +62,12 @@ def authenticate():
     if loginStatus == "Account creation successful":
         session["user"] = request.form["user"]
         username = request.form["user"]
+        print("\n\n-------\n" + username + "\n")
         flash(loginStatus + ". To see your personal feed, login above.")
         return render_template("index.html")
     elif loginStatus == "Login Successful":
+        username = request.form["user"]
+        print("\n\n---Login SUccessful----\n" + username + "\n")
         session["user"] = request.form["user"]
         flash(loginStatus)
         return redirect("/feed")
