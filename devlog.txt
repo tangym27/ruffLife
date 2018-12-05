@@ -110,25 +110,25 @@ aaronL -- 2018-11-27 12:19
 
 aaronL, boL, michelleT, kaitlinW -- 2018-11-27 12:43
 --------------------------------------------------------------
-K: creating base.html for our landing page & developing css
-B: adding authentication and account creation
 A: editing readme for clarification
+B: adding authentication and account creation
 M: fixing our design doc bc our component map does not exist
+K: creating base.html for our landing page & developing css
 ==============================================================
 
 aaronL, kaitlinW, boL -- 2018-11-28 12:39
 --------------------------------------------------------------
-- working on feed site
-- updated index.html and app.py
-- fixed spacing of python
+A: working on feed site
+K: updated index.html and app.py
+B: fixed spacing of python
 ==============================================================
 
 boL, aaronL, kaitlinW, michelleT -- 2018-11-29 12:39
 --------------------------------------------------------------
-- B: added data to db
-- A: linking authentication with backend (wip)
-- K: navbar and hardcoded data
-- M: worked on signup & hardcoded data
+B: added data to db
+A: linking authentication with backend (wip)
+K: navbar and hardcoded data
+M: worked on signup & hardcoded data
 ==============================================================
 
 aaronL -- 2018-11-29 16:31
@@ -192,4 +192,19 @@ aaronL -- 2018-12-05 12:18
 --------------------------------------------------------------
 - fixed welcome status on feed page
 - updated the quote of the day section to properly display greeting
+==============================================================
+
+kaitlinW -- 2018-12-05 12:25
+--------------------------------------------------------------
+- fixed flashed message on the webpage (pop it!)
+==============================================================
+
+boL -- 2018-12-05 12:33
+--------------------------------------------------------------
+- added 'likeImages' method for the database
+==============================================================
+
+michelleT -- 2018-12-05 13:00
+--------------------------------------------------------------
+- updated readme
 ==============================================================
