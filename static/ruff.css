@@ -5,12 +5,12 @@ Kaitlin Wan, Aaron Li, Bo Hui Lu, Michelle Tang
 
 
 html {
-  background-size: cover;
 
 }
 
 body {
-  background-color: "#e6f5ff";
+  background: url(./back.jpg);
+  background-size: cover;
 
 }
 
@@ -22,4 +22,22 @@ a {
 
 .signuper a{
   color:rgb(30, 148, 173);
+}
+
+
+.titlefor h2{
+   color: rgb(46, 8, 54)
+}
+
+.intro h1{
+  color: rgb(33, 12, 41);
+}
+
+.navbar button {
+    outline: none;
+    color: transparent;
+}
+
+.btn:hover{
+  text-decoration: none;
 }
