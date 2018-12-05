@@ -185,6 +185,12 @@ def meme():
     # otherwise, load the feed
     return render_template("meme.html")
 
+@app.route("/like")
+def like():
+    #TEMPORAY PLACEHOLDER LINK
+    return render_template("feed.html")
+
+
 # run flask app with debug set to true
 if __name__ == "__main__":
     app.run(debug = True)
