@@ -14,7 +14,6 @@ catpic | https://aws.random.cat/meow  | no key needed and unlimited quotas!
 dogpic | https://random.dog | no key needed and unlimited quotas!
 catfact | https://catfact.ninja/ | no key needed and unlimited quotas!
 geek jokes | https://github.com/sameerkumar18/geek-joke-api/api | no key needed and unlimited quotas!
-weather | https://openweathermap.org/api/ | no key but a limit of 60 calls per minute
 joke of the day | https://favqs.com/api/ | no key and unlimited quotas!
 
 ## Instructions to Run:
