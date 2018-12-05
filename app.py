@@ -18,6 +18,7 @@ app = Flask(__name__)
 # generate random key
 app.secret_key = os.urandom(32)
 username = ""
+flashMessage = ""
 
 # root route
 @app.route("/")
@@ -28,7 +29,6 @@ def home():
     """
 
     if "user" in session:
-        print(request.form("user"))
         return redirect("/feed")
 
     return render_template("index.html")
@@ -44,7 +44,6 @@ def authenticate():
     """
 
     loginStatus = ''
-    global username
 
     # if user got here manually, redirect to root
     if request.method == "GET" or "user" not in request.form.keys():
@@ -62,12 +61,9 @@ def authenticate():
     if loginStatus == "Account creation successful":
         session["user"] = request.form["user"]
         username = request.form["user"]
-        print("\n\n-------\n" + username + "\n")
         flash(loginStatus + ". To see your personal feed, login above.")
         return render_template("index.html")
     elif loginStatus == "Login Successful":
-        username = request.form["user"]
-        print("\n\n---Login SUccessful----\n" + username + "\n")
         session["user"] = request.form["user"]
         flash(loginStatus)
         return redirect("/feed")
@@ -163,11 +159,14 @@ def quote():
 
 @app.route("/catpic")
 def catpic():
+    global flashMessage
     url = "https://aws.random.cat/meow"
     s = urllib.request.urlopen(url)
     s = s.read()
     d = json.loads(s)
-    flash("LOG IN TO LIKE ITEMS!!")
+    session.pop('_flashes', None)
+    flashMessage = "LOG IN TO LIKE ITEMS!!"
+    flash(flashMessage)
     # otherwise, load the feed
     return render_template("catpic.html", link = d['file'])
 

@@ -12,7 +12,40 @@ Project 1 - ArRESTed Development
     <title>{% block header %}MEMES!{% endblock %}</title>
   </head>
   <body>
-    <img src = "/static/pic.jpeg">
+{% block body %}
+  <center>
+    <br> <br>
+    <h2> Memememememeememememememe! </h2>
+    <br>
+    <img width = 50% src= {{ link }} alt = "reload">
+    <div class="container">
+      <br><br>
+      <div class = "row">
+        <div class = "col-sm-2">
+          </div>
+        <div class = "col-sm-4">
+        <form action = "/meme" method = "GET">
+          <input type = "submit" value = "Get another meme!">
+        </form>
+        </div>
+        <br>
+      <div class = "col-sm-4">
+        <form action = "/" method = "GET">
+            <input type = "submit" value="Like Meme">
+        </form>
+        </div>
+        <div class = "col-sm-4">
+          </div>
+        </div>
 
+        </div>
+        <br>
+        <br>
+
+
+  </center>
+
+
+{%endblock%}
   </body>
 </html>
