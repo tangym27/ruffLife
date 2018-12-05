@@ -17,12 +17,21 @@ c.execute("""CREATE TABLE IF NOT EXISTS userInfo(
             )"""
             )
 
-'''user's likes table'''
+'''user's animal likes table'''
+c.execute("""CREATE TABLE IF NOT EXISTS userLikes(
+username TEXT UNIQUE,
+fav_Animal TEXT,
+)"""
+)
+
+'''TENTATIVE ADDITION'''
+'''user's liked memes table'''
 c.execute("""CREATE TABLE IF NOT EXISTS userLikes(
 username TEXT UNIQUE,
 fav_Animal TEXT,
 fav_Meme TEXT)"""
 )
+
 
 
 '''quotes table'''
