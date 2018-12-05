@@ -180,3 +180,9 @@ aaronL -- 2018-12-04 15:37
 --------------------------------------------------------------
 - finished dog section and fixed login authentication
 ==============================================================
+
+aaronL -- 2018-12-04 20:20
+--------------------------------------------------------------
+- fixed an error bo made
+- finished doge sections, have refresh/like buttons and functionality
+==============================================================
