@@ -191,4 +191,5 @@ aaronL -- 2018-12-04 22:34
 aaronL -- 2018-12-05 12:18
 --------------------------------------------------------------
 - fixed welcome status on feed page
+- updated the quote of the day section to properly display greeting
 ==============================================================
