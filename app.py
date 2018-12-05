@@ -28,7 +28,6 @@ def home():
 
     if "user" in session:
         return redirect("/feed")
-    if 'Like Photo' in request.form.keys():
 
     return render_template("index.html")
 
