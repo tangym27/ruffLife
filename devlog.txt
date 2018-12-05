@@ -184,4 +184,5 @@ aaronL -- 2018-12-04 15:37
 aaronL -- 2018-12-04 20:20
 --------------------------------------------------------------
 - fixed an error bo made
+- finished doge sections, have refresh/like buttons and functionality
 ==============================================================

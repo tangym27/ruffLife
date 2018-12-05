@@ -22,15 +22,15 @@ Project 1 - ArRESTed Development
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/feed.css" rel="stylesheet">
     <style>
-    .limited {
-        max-height: 70%;
-        max-width: 70%;
-    }
+        .limited {
+            max-height: 70%;
+            max-width: 70%;
+        }
 
     </style>
 </head>
@@ -67,6 +67,9 @@ Project 1 - ArRESTed Development
                 <li class="nav-item">
                     <a class="nav-link" href="#weather">Weather</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -91,22 +94,31 @@ Project 1 - ArRESTed Development
 
         <hr class="m-0">
 
-        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="experience">
+        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="doge">
             <div class="my-auto">
                 <h2 class="mb-5">Doge</h2>
 
                 <div class="feed-item d-flex flex-column flex-md-row mb-5">
                     <div class="feed-content mr-auto">
                         <h3 class="mb-0">Here be random doge. Aren't they just cute?</h3>
+                        <br>
                         <!-- <div class="subheading mb-3">Intelitec Solutions</div> -->
                         <img class="limited" src="{{ link }}" alt = "reload">
-                        <form action = "/catpic" method = "GET">
+                        <br><br>
+                        <form action = "/reload" method = "POST">
                             <input type = "submit" value = "Get another photo!">
-                            <input type = "submit" value="Like Photo">
                         </form>
                     </div>
                     <div class="feed-date text-md-right">
                         <span class="text-primary"><a href="{{ link }}" target="_blank">Link to Pic</a></span>
+                        <br><br>
+                        <span><a href="/like"><i class="fa fa-thumbs-o-up" style="font-size: 50px; color: black;">Like</i></a></span>
+                        <br><br>
+                        <form action = "/reload" method = "POST">
+                            <button class="btn btn-default" type="submit">
+                                <i class="fa fa-refresh" style="font-size: 50px; color: black;">Refresh</i>
+                            </button>
+                        </form>
                     </div>
                 </div>
 
@@ -119,28 +131,23 @@ Project 1 - ArRESTed Development
 
         <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="education">
             <div class="my-auto">
-                <h2 class="mb-5">Education</h2>
+                <h2 class="mb-5">Cats · Los Gatos </h2>
 
                 <div class="feed-item d-flex flex-column flex-md-row mb-5">
                     <div class="feed-content mr-auto">
-                        <h3 class="mb-0">University of Colorado Boulder</h3>
-                        <div class="subheading mb-3">Bachelor of Science</div>
-                        <div>Computer Science - Web Development Track</div>
-                        <p>GPA: 3.23</p>
+                        <h3 class="mb-0">Here be random cat. Purrrrr!</h3>
+                        <br>
+                        <!-- <div class="subheading mb-3">Intelitec Solutions</div> -->
+                        <img class="limited" src="{{ link2 }}" alt = "reload">
+                        <br><br>
+                        <form action = "/reload" method = "POST">
+                            <input type = "submit" value = "Get another photo!">
+                        </form>
                     </div>
                     <div class="feed-date text-md-right">
-                        <span class="text-primary">August 2006 - May 2010</span>
-                    </div>
-                </div>
-
-                <div class="feed-item d-flex flex-column flex-md-row">
-                    <div class="feed-content mr-auto">
-                        <h3 class="mb-0">James Buchanan High School</h3>
-                        <div class="subheading mb-3">Technology Magnet Program</div>
-                        <p>GPA: 3.56</p>
-                    </div>
-                    <div class="feed-date text-md-right">
-                        <span class="text-primary">August 2002 - May 2006</span>
+                        <span class="text-primary"><a href="{{ link2 }}" target="_blank">Link to Pic</a></span>
+                        <br><br>
+                        <span><a href="/like"><i class="fa fa-thumbs-o-up" style="font-size: 50px; color: black;">Like</i></a></span>
                     </div>
                 </div>
 

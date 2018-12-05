@@ -89,6 +89,16 @@ def feed():
     # otherwise, load the feed
     return render_template("feed.html", link = d['url'])
 
+@app.route("/reload", methods=["GET", "POST"])
+def reload():
+    if not ("user" in session):
+        flash("You are not logged in.")
+        return redirect("/")
+    if request.method == "GET":
+        return redirect("/feed")
+    else:
+        return redirect("/feed#doge")
+
 # logout route
 @app.route("/logout")
 def logout():
