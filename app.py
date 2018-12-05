@@ -153,6 +153,7 @@ def quote():
     s = urllib.request.urlopen(url)
     s = s.read()
     d = json.loads(s)
+    flash("LOG IN TO LIKE ITEMS!!")
     return render_template("quote.html", link = d['quote']['body'])
 
 @app.route("/catpic")
@@ -161,7 +162,7 @@ def catpic():
     s = urllib.request.urlopen(url)
     s = s.read()
     d = json.loads(s)
-    flash("LOG IN TO LIKE PHOTOS!!")
+    flash("LOG IN TO LIKE ITEMS!!")
     # otherwise, load the feed
     return render_template("catpic.html", link = d['file'])
 

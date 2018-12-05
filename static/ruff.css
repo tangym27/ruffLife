@@ -20,8 +20,12 @@ a {
     background-color: transparent;
 }
 
+.signuper{
+  color:rgb(252, 252, 252);
+}
+
 .signuper a{
-  color:rgb(30, 148, 173);
+  color:rgba(134, 223, 242, 1);
 }
 
 
@@ -40,4 +44,44 @@ a {
 
 .btn:hover{
   text-decoration: none;
+}
+
+.container2 {
+  position: relative;
+}
+
+.centered-element {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -50px;
+}
+
+.speech-bubble {
+	position: relative;
+	background: #f0da99;
+	border-radius: .4em;
+  padding: 25px;
+}
+
+.speech-bubble p{
+  font-size: 20px;
+}
+
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 32px solid transparent;
+	border-top-color: #f0da99;
+	border-bottom: 0;
+	margin-left: -32px;
+	margin-bottom: -32px;
 }

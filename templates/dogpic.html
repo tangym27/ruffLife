@@ -18,12 +18,30 @@ Project 1 - ArRESTed Development
     <h2> Pawfic Pic </h2>
     <br>
     <img width = 50% src= {{ link }} alt = "reload">
-    <br><br>
-      <form action = "/catpic" method = "GET">
-        <input type = "submit" value = "Get another photo!">
-        <input type = "submit" value="Like Photo">
-      </form>
+    <div class="container">
+      <br><br>
+      <div class = "row">
+        <div class = "col-sm-2">
+          </div>
+        <div class = "col-sm-4">
+        <form action = "/catpic" method = "GET">
+          <input type = "submit" value = "Get another photo!">
+        </form>
+        </div>
+        <br>
+      <div class = "col-sm-4">
+        <form action = "/" method = "GET">
+            <input type = "submit" value="Like Photo">
+        </form>
+        </div>
+        <div class = "col-sm-4">
+          </div>
+        </div>
+
+        </div>
+
   </center>
+
 
 {%endblock%}
   </body>

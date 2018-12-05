@@ -8,14 +8,60 @@ Project 1 - ArRESTed Development
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% block header %}Inspiration{% endblock %}</title>
-  </head>
-  <body>
-    {% block body %}
-<p> HELLO THERE</p>
-    My style is unique and random. But I think it's important that it still makes sense. Jess Glynne
-Read more at: https://www.brainyquote.com/quotes/jess_glynne_716278?src=t_random
-    {% endblock %}
-  </body>
+
+<head>
+  <title>{% block header %}Inspiration{% endblock %}</title>
+</head>
+
+<body>
+  {% block body %}
+  <br><br><br><br><br><br><br>
+  <div class="container">
+    <div class="container2">
+      <div class="speech-bubble">
+        <div class="container">
+          <div class="row">
+            <div class='col-sm-1'>
+              <h3> " </h3>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-sm-12">
+              <div align = "center">
+              {{link}}
+              <br>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class='col-sm-12'>
+                <div align="right">
+                <h3> " </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br><br>
+  <center>
+    <form action = "/quote" method = "GET">
+      <input type = "submit" value = "Get another quote!">
+    </form>
+<br><br>
+    <form action = "/" method = "GET">
+        <input type = "submit" value="Like Quote">
+    </form>
+
+</center>
+
+  </div>
+
+
+
+  {% endblock %}
+</body>
+
 </html>
