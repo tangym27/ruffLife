@@ -177,6 +177,7 @@ def dogpic():
     s = urllib.request.urlopen(url)
     s = s.read()
     d = json.loads(s)
+    flash("LOG IN TO LIKE ITEMS!!")
     # otherwise, load the feed
     return render_template("dogpic.html", link = d['url'])
 
