@@ -154,7 +154,7 @@ def quote():
     s = s.read()
     d = json.loads(s)
     flash("LOG IN TO LIKE ITEMS!!")
-    return render_template("quote.html", link = d['quote']['body'])
+    return render_template("quote.html", link = d['quote']['body'], auth = d['quote']["author"] )
 
 @app.route("/catpic")
 def catpic():
