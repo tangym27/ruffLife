@@ -17,6 +17,7 @@ app = Flask(__name__)
 
 # generate random key
 app.secret_key = os.urandom(32)
+username = ""
 
 # root route
 @app.route("/")
@@ -31,7 +32,7 @@ def home():
 
     return render_template("index.html")
 
-# authentication route
+    # authentication route
 @app.route("/authenticate", methods = ["POST", "GET"])
 def authenticate():
     """
@@ -58,6 +59,7 @@ def authenticate():
     # if user successfull logs in, redirects to their feed
     if loginStatus == "Account creation successful":
         session["user"] = request.form["user"]
+        username = request.form["user"]
         flash(loginStatus + ". To see your personal feed, login above.")
         return render_template("index.html")
     elif loginStatus == "Login Successful":
@@ -79,25 +81,41 @@ def feed():
     url = "https://random.dog/woof.json"
     status = True;
     while(status):
-        s = urllib.request.urlopen(url)
-        s = s.read()
-        d = json.loads(s)
-        print(d["url"][-3:])
-        if(d["url"][-3:] != "mp4"):
+        straw = urllib.request.urlopen(url)
+        straw = straw.read()
+        dict = json.loads(straw)
+        print(dict["url"][-3:])
+        if(dict["url"][-3:] != "mp4"):
             status = False
 
+    url = "https://aws.random.cat/meow"
+    straw = urllib.request.urlopen(url)
+    straw = straw.read()
+    cat = json.loads(straw)
+
+    url = "https://catfact.ninja/fact"
+    straw = urllib.request.urlopen(url)
+    straw = straw.read()
+    cat_fact = json.loads(straw)
+    print(cat_fact['fact'])
+
+    url = urllib.request.urlopen("https://favqs.com/api/qotd")
+    data = json.loads(url.read().decode())
+    data = data["quote"]
+    print(data["body"])
+    print("\n-------------------\n" + username + "\n----------------------\n")
     # otherwise, load the feed
-    return render_template("feed.html", link = d['url'])
+    return render_template("feed.html", dog_link = dict['url'], cat_link = cat["file"], cat_fact = cat_fact["fact"], quote = data["body"], author = data["author"], user = username)
 
 @app.route("/reload", methods=["GET", "POST"])
 def reload():
     if not ("user" in session):
         flash("You are not logged in.")
         return redirect("/")
-    if request.method == "GET":
-        return redirect("/feed")
-    else:
+    if request.method == "POST":
         return redirect("/feed#doge")
+    else:
+        return redirect("/feed#cat")
 
 # logout route
 @app.route("/logout")

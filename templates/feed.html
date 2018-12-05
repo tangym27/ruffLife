@@ -87,7 +87,7 @@ Project 1 - ArRESTed Development
                 <h3 class="mb-0">Welcome
                     <span class="text-warning">{{ user }}</span>
                 </h3>
-                <p class="lead mb-5">Here at ruffLife, we strive to make your every day relaxing, enjoyable, and full of happiness. Enjoy dog and cat pictures, jokes, and quotes that will make you smile.</p>
+                <p class="lead mb-5">Here at ruffLife, we strive to make your every day relaxing, enjoyable, and full of happiness. Enjoy dog or cat pictures, cat facts, and daily quotes that will be sure to make you smile.</p>
 
             </div>
         </section>
@@ -103,20 +103,16 @@ Project 1 - ArRESTed Development
                         <h3 class="mb-0">Here be random doge. Aren't they just cute?</h3>
                         <br>
                         <!-- <div class="subheading mb-3">Intelitec Solutions</div> -->
-                        <img class="limited" src="{{ link }}" alt = "reload">
-                        <br><br>
-                        <form action = "/reload" method = "POST">
-                            <input type = "submit" value = "Get another photo!">
-                        </form>
+                        <img class="limited" src="{{ dog_link }}" alt = "reload">
                     </div>
                     <div class="feed-date text-md-right">
-                        <span class="text-primary"><a href="{{ link }}" target="_blank">Link to Pic</a></span>
+                        <span class="text-primary"><a href="{{ dog_link }}" target="_blank">Link to Pic</a></span>
                         <br><br>
                         <span><a href="/like"><i class="fa fa-thumbs-o-up" style="font-size: 50px; color: black;">Like</i></a></span>
                         <br><br>
                         <form action = "/reload" method = "POST">
                             <button class="btn btn-default" type="submit">
-                                <i class="fa fa-refresh" style="font-size: 50px; color: black;">Refresh</i>
+                                <i class="fa fa-refresh" style="font-size: 50px; color: black;">Reload</i>
                             </button>
                         </form>
                     </div>
@@ -129,7 +125,7 @@ Project 1 - ArRESTed Development
 
         <hr class="m-0">
 
-        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="education">
+        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="cat">
             <div class="my-auto">
                 <h2 class="mb-5">Cats · Los Gatos </h2>
 
@@ -137,17 +133,29 @@ Project 1 - ArRESTed Development
                     <div class="feed-content mr-auto">
                         <h3 class="mb-0">Here be random cat. Purrrrr!</h3>
                         <br>
-                        <!-- <div class="subheading mb-3">Intelitec Solutions</div> -->
-                        <img class="limited" src="{{ link2 }}" alt = "reload">
+                        <img class="limited" src="{{ cat_link }}" alt = "reload">
                         <br><br>
-                        <form action = "/reload" method = "POST">
-                            <input type = "submit" value = "Get another photo!">
-                        </form>
+                        <span class="text-md-left">
+                            <a href="/like">
+                                <button class="btn btn-transparent">
+                                    <i class="fa fa-thumbs-o-up" style="font-size: 25px; color: black;">Like &nbsp;</i>
+                                </button>
+                            </a>
+                            <a href="/reload">
+                                <button class="btn btn-default">
+                                    <i class="fa fa-refresh" style="font-size: 25px; color: black;">Another Pic</i>
+                                </button>
+                            </a>
+                        </span>
+                        <br><br>
                     </div>
                     <div class="feed-date text-md-right">
-                        <span class="text-primary"><a href="{{ link2 }}" target="_blank">Link to Pic</a></span>
+                        <span class="text-primary"><a href="{{ cat_link }}" target="_blank">Link to Pic</a></span>
                         <br><br>
-                        <span><a href="/like"><i class="fa fa-thumbs-o-up" style="font-size: 50px; color: black;">Like</i></a></span>
+                        <h3 class="mb-0"><small>Random(and Perhaps Interesting) Cat Fact:</small></h3>
+                        <p>
+                            {{ cat_fact }}
+                        </p>
                     </div>
                 </div>
 
@@ -156,116 +164,25 @@ Project 1 - ArRESTed Development
 
         <hr class="m-0">
 
-        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="skills">
+        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="quotes">
             <div class="my-auto">
-                <h2 class="mb-5">Skills</h2>
+                <h1 class="mb-0 mt-0">Quote of the
+                    <span class="text-primary">Day</span>
+                </h1>
+                <div class="subheading mb-5">we hope your day will be exciting, refreshing, and relaxing!</div>
+                <h3 class="mb-0">
+                    <span class="text-warning">{{ user }}</span>
+                </h3>
+                <blockquote class="blockquote">
+                    <h3 class="mb-1">" {{ quote }} "</h3>
+                    <footer class="blockquote-footer"><cite title="Source Title"> {{ author }}</cite></footer>
+                </blockquote>
 
-                <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-                <ul class="list-inline dev-icons">
-                    <li class="list-inline-item">
-                        <i class="fab fa-html5"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-css3-alt"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-js-square"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-angular"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-react"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-node-js"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-sass"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-less"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-wordpress"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-gulp"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-grunt"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-npm"></i>
-                    </li>
-                </ul>
+            </div>
+        </section>
 
-                <div class="subheading mb-3">Workflow</div>
-                <ul class="fa-ul mb-0">
-                    <li>
-                        <i class="fa-li fa fa-check"></i>
-                        Mobile-First, Responsive Design</li>
-                        <li>
-                            <i class="fa-li fa fa-check"></i>
-                            Cross Browser Testing &amp; Debugging</li>
-                            <li>
-                                <i class="fa-li fa fa-check"></i>
-                                Cross Functional Teams</li>
-                                <li>
-                                    <i class="fa-li fa fa-check"></i>
-                                    Agile Development &amp; Scrum</li>
-                                </ul>
-                            </div>
-                        </section>
+    </div>
 
-                        <hr class="m-0">
+</body>
 
-                        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="interests">
-                            <div class="my-auto">
-                                <h2 class="mb-5">Interests</h2>
-                                <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-                                <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
-                            </div>
-                        </section>
-
-                        <hr class="m-0">
-
-                        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="weather">
-                            <div class="my-auto">
-                                <h2 class="mb-5">Awards &amp; Certifications</h2>
-                                <ul class="fa-ul mb-0">
-                                    <li>
-                                        <i class="fa-li fa fa-trophy text-warning"></i>
-                                        Google Analytics Certified Developer</li>
-                                        <li>
-                                            <i class="fa-li fa fa-trophy text-warning"></i>
-                                            Mobile Web Specialist - Google Certification</li>
-                                            <li>
-                                                <i class="fa-li fa fa-trophy text-warning"></i>
-                                                1<sup>st</sup>
-                                                Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
-                                                <li>
-                                                    <i class="fa-li fa fa-trophy text-warning"></i>
-                                                    1<sup>st</sup>
-                                                    Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
-                                                    <li>
-                                                        <i class="fa-li fa fa-trophy text-warning"></i>
-                                                        2<sup>nd</sup>
-                                                        Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
-                                                        <li>
-                                                            <i class="fa-li fa fa-trophy text-warning"></i>
-                                                            1<sup>st</sup>
-                                                            Place - James Buchanan High School - Hackathon 2006</li>
-                                                            <li>
-                                                                <i class="fa-li fa fa-trophy text-warning"></i>
-                                                                3<sup>rd</sup>
-                                                                Place - James Buchanan High School - Hackathon 2005</li>
-                                                            </ul>
-                                                        </div>
-                                                    </section>
-
-                                                </div>
-
-                                            </body>
-
-                                            </html>
+</html>
