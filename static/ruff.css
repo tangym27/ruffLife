@@ -25,7 +25,7 @@ a {
 }
 
 .signuper a{
-  color:rgba(134, 223, 242, 1);
+  color:#f3d99f;
 }
 
 
@@ -95,7 +95,10 @@ a {
   color: white;
 }
 
-.button {
-  background: yellow;
+
+.signuper  [type=submit]{
+background-image: linear-gradient(to right top, #f3b00e, #f6ba34, #f9c34d, #fccd63, #ffd679);
   color: white;
+  border-radius: 12px;
+
 }
