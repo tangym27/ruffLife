@@ -70,7 +70,6 @@ def authenticate():
     else:
         flash(loginStatus)
         return redirect("/")
-
 # for logged in users: their complete page
 @app.route("/feed")
 def feed():
@@ -149,6 +148,10 @@ def weather():
 
 @app.route("/quote")
 def quote():
+    global flashMessage
+    global username
+    global liked
+    global liked_a
     # otherwise, load the feed
     url = 'https://favqs.com/api/qotd'
     s = urllib.request.urlopen(url)
@@ -157,35 +160,70 @@ def quote():
     session.pop('_flashes', None)
     flashMessage = "TO LIKE QUOTE, PLEASE LOG IN!!"
     flash(flashMessage)
+    liked = d['quote']['body']
+    liked_a = d['quote']["author"]
     return render_template("quote.html", link = d['quote']['body'], auth = d['quote']["author"] )
+
+@app.route("/add_quote")
+def add_quote():
+    global liked
+    global liked_a
+    global username
+    userMethods.addWord(username, liked)
+    return render_template("quote.html", link = liked, auth = liked_a)
 
 @app.route("/catpic")
 def catpic():
     global flashMessage
+    global username
+    global liked
     url = "https://aws.random.cat/meow"
     s = urllib.request.urlopen(url)
     s = s.read()
     d = json.loads(s)
     session.pop('_flashes', None)
+    print("USERNAME")
+    print (username)
+    liked = d['file']
     flashMessage = "TO LIKE PHOTO, PLEASE LOG IN!!"
     flash(flashMessage)
     # otherwise, load the feed
     return render_template("catpic.html", link = d['file'])
 
+@app.route("/add_cat")
+def add_cat():
+    global liked
+    global username
+    userMethods.addImage(username, liked)
+    return render_template("catpic.html", link = liked)
+
 @app.route("/dogpic")
 def dogpic():
+    global username
+    global liked
     url = "https://random.dog/woof.json"
     s = urllib.request.urlopen(url)
     s = s.read()
     d = json.loads(s)
     session.pop('_flashes', None)
+    liked = d['url']
+
     flashMessage = "TO LIKE PHOTO, PLEASE LOG IN!!"
     flash(flashMessage)
     # otherwise, load the feed
     return render_template("dogpic.html", link = d['url'])
 
+@app.route("/add_dog")
+def add_dog():
+    global liked
+    global username
+    userMethods.addImage(username, liked)
+    return render_template("dogpic.html", link = liked)
+
 @app.route("/fact")
 def fact():
+    global username
+    global liked
     url = "http://randomuselessfact.appspot.com/random.json?language=en"
     s = urllib.request.urlopen(url)
     s = s.read()
@@ -193,8 +231,16 @@ def fact():
     session.pop('_flashes', None)
     flashMessage = "TO LIKE FACT, PLEASE LOG IN!!"
     flash(flashMessage)
+    liked = d['text']
     # otherwise, load the feed
     return render_template("fact.html", link = d['text'])
+
+@app.route("/add_fact")
+def add_fact():
+    global liked
+    global username
+    userMethods.addWord(username, liked)
+    return render_template("fact.html", link = liked)
 
 @app.route("/meme")
 def meme():
@@ -211,10 +257,16 @@ def meme():
     # otherwise, load the feed
     return render_template("meme.html",link = d['data']['url'], em = d['data']['embed_url'])
 
-@app.route("/like")
-def like():
-    #TEMPORAY PLACEHOLDER LINK
-    return render_template("feed.html")
+# @app.route("/add_meme")
+# def add_meme():
+#     global liked
+#     global username
+#     userMethods.addImage(username, liked)
+#     return render_template("dogpic.html", link = liked)
+# @app.route("/like")
+# def like():
+#     #TEMPORAY PLACEHOLDER LINK
+#     return render_template("feed.html")
 
 
 # run flask app with debug set to true

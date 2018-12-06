@@ -7,7 +7,7 @@
 import sqlite3
 
 def create():
-    db = sqlite3.connect("../data/fluffy.db")
+    db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     '''user info table'''
     c.execute("""CREATE TABLE IF NOT EXISTS userInfo(
@@ -27,7 +27,7 @@ def checkInfo(user, pswd):
     '''This method checks if the user and password combination
     is a valid one, and returns error messages accordingly'''
 
-    db = sqlite3.connect("../data/fluffy.db")
+    db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     #Looks for the password of the inputted user
     for i in c.execute("SELECT pass FROM userInfo WHERE username = ?",(user,)):
@@ -50,7 +50,7 @@ def createAccount(user,pswd,passConf):
     to make sure they did not err anywhere in the process. If everything
     is correct, then the account will be created.'''
 
-    db = sqlite3.connect("../data/fluffy.db")
+    db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     #checks if the username already exists
     for i in c.execute("SELECT username FROM userInfo WHERE username = ?",(user,)):
@@ -70,7 +70,7 @@ def createAccount(user,pswd,passConf):
 
 def likedImages(user):
     '''This function returns a string of all of the url a user has liked'''
-    db = sqlite3.connect("../data/fluffy.db")
+    db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     c.execute("SELECT * FROM userInfo WHERE username = ?",(user,))
     url_list = c.fetchall()
@@ -81,7 +81,7 @@ def likedImages(user):
 
 def addImage(user,url):
     '''This function edits an entry in the entries table'''
-    db = sqlite3.connect("../data/fluffy.db")
+    db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     url_list = likedImages(user)
     url_list = url_list + "," + url
@@ -94,7 +94,7 @@ def addImage(user,url):
 
 def likedWords(user):
     '''This function returns a string of all of the url a user has liked'''
-    db = sqlite3.connect("../data/fluffy.db")
+    db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     c.execute("SELECT * FROM userInfo WHERE username = ?",(user,))
     words = c.fetchall()
@@ -106,7 +106,7 @@ def likedWords(user):
 
 def addWord(user,word):
     '''This function edits an entry in the entries table'''
-    db = sqlite3.connect("../data/fluffy.db")
+    db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     words = likedWords(user)
     words = words + "," + word
@@ -117,7 +117,7 @@ def addWord(user,word):
     return 1;
 
 def test():
-    db = sqlite3.connect("../data/fluffy.db")
+    db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
 
     c.execute("SELECT * FROM userInfo;")
@@ -127,12 +127,12 @@ def test():
     db.close()
 
 create()
-createAccount("user1","pass","pass")
-createAccount("user2","pass","pass")
-likedImages("user1")
-addImage("user1", "google.com")
-addImage("user1", "google2.com")
-likedWords("user1")
-addWord("user1", "quote1")
-addWord("user2", "quote2")
-test()
+# createAccount("user1","pass","pass")
+# createAccount("user2","pass","pass")
+# likedImages("user1")
+# addImage("user1", "google.com")
+# addImage("user1", "google2.com")
+# likedWords("user1")
+# addWord("user1", "quote1")
+# addWord("user2", "quote2")
+# test()

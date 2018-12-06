@@ -214,3 +214,12 @@ aaronL -- 2018-12-05 15:17
 - commented out bo's code cus he broke working version of app
 - removed weather/joke section added meme section
 ==============================================================
+
+kaitlinW -- 2018-12-06 00:30
+--------------------------------------------------------------
+- finalized all tabs
+- fixed css for "ugly" looking things
+- debugging routes + code
+==============================================================
+
+
