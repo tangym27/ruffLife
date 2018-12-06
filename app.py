@@ -312,8 +312,11 @@ def add_fact():
 @app.route("/meme")
 def meme():
     global flashMessage
+    f = open("./api/meme.txt", "r")
+    mykey = f.readline().strip()
     api = "SRjFBkxPqxKoBspQ2HdwQxt4wsDnbArq"
-    url = "http://api.giphy.com/v1/gifs/random?api_key=SRjFBkxPqxKoBspQ2HdwQxt4wsDnbArq&tag=meme&rating=pg"
+    url = "http://api.giphy.com/v1/gifs/random?api_key=" + mykey + "&tag=meme&rating=pg"
+    print(url)
     s = urllib.request.urlopen(url)
     s = s.read()
     d = json.loads(s)
