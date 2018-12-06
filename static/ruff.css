@@ -85,3 +85,17 @@ a {
 	margin-left: -32px;
 	margin-bottom: -32px;
 }
+
+.navbar{
+    background-color: #f3d99f;
+    border-color: #E7E7E7;
+}
+
+.intro h1 {
+  color: white;
+}
+
+.button {
+  background: yellow;
+  color: white;
+}
