@@ -8,14 +8,14 @@ Using RESTful APIs to help stressful users relax mentally by looking at various 
 ## APIs
 **Here are the APIs that we use & how to procure keys:**
 
-API Name | Link | Notes
---- | --- | ---
-catpic | https://aws.random.cat/meow  | no key needed and unlimited quotas! 
-dogpic | https://random.dog | no key needed and unlimited quotas!
-catfact | https://catfact.ninja/ | no key needed and unlimited quotas!
-fun jokes | http://randomuselessfact.appspot.com/ | no key needed and unlimited quotas!
-gif | https://developers.giphy.com/docs/ | key is needed and there is a 10,000 search per day quota limit
-quote of the day | https://favqs.com/api/ | no key and unlimited quotas!
+API Name | Link | Key & Quota | How to Create Key 
+--- | --- | --- | ---
+catpic | https://aws.random.cat/meow  | no key needed and unlimited quotas! | N/A
+dogpic | https://random.dog | no key needed and unlimited quotas! | N/A
+catfact | https://catfact.ninja/ | no key needed and unlimited quotas! | N/A
+fun jokes | http://randomuselessfact.appspot.com/ | no key needed and unlimited quotas! | N/A
+gif | https://developers.giphy.com/docs/ | key is needed and there is a 10,000 search per day quota limit | Register for a developer account. Then, create an App (access through the dashboard). Fill in all required fields and save it. 
+quote of the day | https://favqs.com/api/ | no key and unlimited quotas!| N/A
 
 ## Instructions to Run:
 
@@ -31,6 +31,7 @@ $ sudo apt install python3-venv
 $ python3 -m venv <VENV>
 ```
 3. Activate the virtual environment by typing ```$ . PATH_TO_VENV/bin/activate``` in the terminal. Make sure you are in the directory which contains the virtual environment. To check, type in ```ls``` to get a current listing of the files in your current working directory.  
+4. Upload your API key in the ```/api``` folder. Name the file ```meme.txt```. For instructions on how to get your API key, see the APIs section above.
 4. Install the following dependencies:
 ```
 $ sudo pip install wheel
