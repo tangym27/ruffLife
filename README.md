@@ -13,8 +13,9 @@ API Name | Link | Notes
 catpic | https://aws.random.cat/meow  | no key needed and unlimited quotas! 
 dogpic | https://random.dog | no key needed and unlimited quotas!
 catfact | https://catfact.ninja/ | no key needed and unlimited quotas!
-geek jokes | https://github.com/sameerkumar18/geek-joke-api/api | no key needed and unlimited quotas!
-joke of the day | https://favqs.com/api/ | no key and unlimited quotas!
+fun jokes | http://randomuselessfact.appspot.com/ | no key needed and unlimited quotas!
+gif | https://developers.giphy.com/docs/ | key is needed and there is a 10,000 search per day quota limit
+quote of the day | https://favqs.com/api/ | no key and unlimited quotas!
 
 ## Instructions to Run:
 
