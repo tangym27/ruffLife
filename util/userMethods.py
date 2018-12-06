@@ -63,7 +63,7 @@ def createAccount(user,pswd,passConf):
             return "Passwords do not match"
         #if password confirmation succeeds add the user to the database
         userdb="INSERT INTO userInfo(username, pass, liked_img, liked_words) VALUES( ?, ?, ?, ?)"
-        c.execute(userdb,(user,pswd,"liked_img_demo","liked_words_demo",))
+        c.execute(userdb,(user,pswd,"liked_img_demo","liked_words_demo"))
         db.commit()
         db.close()
         return "Account creation successful"
