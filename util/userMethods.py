@@ -86,7 +86,7 @@ def addImage(user,url):
     url_list = likedImages(user)
     url_list = url_list + "," + url
     print ("URLLL HERE: \n")
-    print url_list
+    print (url_list)
     c.execute("UPDATE userInfo SET liked_img = ? WHERE username = ?",(url_list, user))
     db.commit()
     db.close()
@@ -99,7 +99,7 @@ def likedWords(user):
     c.execute("SELECT * FROM userInfo WHERE username = ?",(user,))
     words = c.fetchall()
     words= str(words[0][4])
-    print words
+    print (words)
     db.commit()
     db.close()
     return words
