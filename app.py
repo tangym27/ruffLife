@@ -104,8 +104,16 @@ def feed():
     data = data["quote"]
     print(data["body"])
     print("\n-------------------\n" + username + "\n----------------------\n")
+
+    api = "SRjFBkxPqxKoBspQ2HdwQxt4wsDnbArq"
+    url = "http://api.giphy.com/v1/gifs/random?api_key=SRjFBkxPqxKoBspQ2HdwQxt4wsDnbArq&tag=meme&rating=pg"
+    straw = urllib.request.urlopen(url)
+    straw = straw.read()
+    memes = json.loads(straw)
+    print(memes['data']['url'])
+
     # otherwise, load the feed
-    return render_template("feed.html", dog_link = dict['url'], cat_link = cat["file"], cat_fact = cat_fact["fact"], quote = data["body"], author = data["author"], user = username)
+    return render_template("feed.html", dog_link = dict['url'], cat_link = cat["file"], quote = data["body"], author = data["author"], user = username, link = memes['data']['url'], em = memes['data']['embed_url'])
 
 @app.route("/reload", methods=["GET", "POST"])
 def reload():
