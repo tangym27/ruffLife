@@ -27,10 +27,8 @@ def home():
     If user is logged in, redirect them to their feed.
     If not logged in, prompt login page
     """
-
     if "user" in session:
         return redirect("/feed")
-
     return render_template("index.html")
 
     # authentication route
