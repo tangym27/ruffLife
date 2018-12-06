@@ -110,7 +110,7 @@ def addWord(user,word):
     c = db.cursor()
     words = likedWords(user)
     words = words + "," + word
-    print words
+    print (words)
     c.execute("UPDATE userInfo SET liked_words = ? WHERE username = ?",(words, user))
     db.commit()
     db.close()
@@ -122,7 +122,7 @@ def test():
 
     c.execute("SELECT * FROM userInfo;")
     results = c.fetchall()
-    print results;
+    print (results)
     db.commit()
     db.close()
 
