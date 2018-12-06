@@ -66,14 +66,14 @@ Project 1 - ArRESTed Development
     <div container = 'navbar'>
         <div class="container-full-bg">
             <nav class="navbar sticky-top navbar-dark ">
-                <button class="btn btn-md btn-link" type="button" ><a href="/">Home</a></button>
-                <button class="btn btn-md btn-link" type="button">      <a href="/feed">Personal Feed</a></button>
-                <button class="btn btn-md btn-link" type="button">    <a href="/catpic">Cat Picture</a></button>
-                <button class="btn btn-md btn-link" type="button">        <a href="/dogpic">Dog Picture</a></button>
-                <button class="btn btn-md btn-link" type="button">  <a href="/fact">Random Fact</a></button>
-                <button class="btn btn-md btn-link" type="button">      <a href="/meme">Funny Meme</a></button>
-                <button class="btn btn-md btn-link" type="button">        <a href="/quote">Inspirational Quote</a></button>
-                <button class="btn btn-md btn-link" type="button">  <a href="/logout">Log Out</a></button>
+                <a href="/"><button class="btn btn-md btn-link" type="button" ></button>Home</a>
+                <a href="/feed"><button class="btn btn-md btn-link" type="button"></button>Personal Feed</a>
+                <a href="/catpic"><button class="btn btn-md btn-link" type="button"></button>Cat Picture</a>
+                <a href="/dogpic"><button class="btn btn-md btn-link" type="button"></button>Dog Picture</a>
+                <a href="/fact"><button class="btn btn-md btn-link" type="button"></button>Random Fact</a>
+                <a href="/meme"><button class="btn btn-md btn-link" type="button"></button>Funny Meme</a>
+                <a href="/quote"><button class="btn btn-md btn-link" type="button">  </button>Inspirational Quote</a>
+                <a href="/logout"><button class="btn btn-md btn-link" type="button"></button>Log In/Out</a>
             </nav></div></div>
 
             <nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top" id="sideNav">
@@ -103,6 +103,9 @@ Project 1 - ArRESTed Development
                         <li class="nav-item">
                             <a class="nav-link" href="#quotes">Quotes</a>
                         </li>
+			<li class="nav-item">
+                            <a class="nav-link" href="#liked">Liked Images</a>
+                        </li>	
                         <li class="nav-item">
                             <a class="nav-link" href="/logout">Logout</a>
                         </li>
@@ -196,7 +199,7 @@ Project 1 - ArRESTed Development
 
                 <hr class="m-0">
 
-                <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="quotes">
+                <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="quote">
                     <div class="my-auto">
                         <h1 class="mb-0 mt-0">Quote of the
                             <span class="text-primary">Day</span>
@@ -330,7 +333,6 @@ Project 1 - ArRESTed Development
                             <div class="feed-content mr-auto">
                                 <h3 class="mb-0">Here a meme. Pls appreciate.</h3>
                                 <br>
-                                <!-- <div class="subheading mb-3">Intelitec Solutions</div> -->
                                 <iframe src="{{em}}" width="480" height="317" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="{{link}}">via GIPHY</a></p>
                             </div>
                             <div class="feed-date text-md-right">
@@ -348,8 +350,23 @@ Project 1 - ArRESTed Development
 
 
                     </div>
-
                 </section>
+		
+		<hr class="m-0">
+
+                <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="liked">
+                    <div class="my-auto">
+                        <h1 class="mb-0 mt-0">liked
+                            <span class="text-primary">Images</span>
+                        </h1>
+                        <div class="subheading mb-5">Below you can find all your liked images and quotes!</div>
+                        
+			{% for url in urls %}
+
+			{% endfor %}
+                    </div>
+                </section>
+]
             </div>
 
         </body>
