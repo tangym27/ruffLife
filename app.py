@@ -27,10 +27,8 @@ def home():
     If user is logged in, redirect them to their feed.
     If not logged in, prompt login page
     """
-
     if "user" in session:
         return redirect("/feed")
-
     return render_template("index.html")
 
     # authentication route
@@ -242,6 +240,11 @@ def fact():
     flashMessage = "TO LIKE FACT, PLEASE LOG IN!!"
     flash(flashMessage)
     liked = d['text']
+    print("dfadsfds")
+
+    print (liked)
+    add_fact()
+
     # otherwise, load the feed
     return render_template("fact.html", link = d['text'])
 
@@ -249,6 +252,7 @@ def fact():
 def add_fact():
     global liked
     global username
+    print(liked)
     userMethods.addWord(username, liked)
     return render_template("fact.html", link = liked)
 
