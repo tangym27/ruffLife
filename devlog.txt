@@ -226,3 +226,9 @@ aaronL -- 2018-12-06 12:34
 --------------------------------------------------------------
 - updated feed with random quote, meme, and integrating liking pics
 ==============================================================
+
+aaronL -- 2018-12-06 15:36
+--------------------------------------------------------------
+- fixed base template anchor links, added reload functionality
+  for quotes and facts
+==============================================================

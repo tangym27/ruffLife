@@ -112,8 +112,14 @@ def feed():
     memes = json.loads(straw)
     print(memes['data']['url'])
 
+    url = "http://randomuselessfact.appspot.com/random.json?language=en"
+    straw = urllib.request.urlopen(url)
+    straw = straw.read()
+    facts = json.loads(straw)
+    print(facts["text"])
+
     # otherwise, load the feed
-    return render_template("feed.html", dog_link = dict['url'], cat_link = cat["file"], quote = data["body"], author = data["author"], user = username, link = memes['data']['url'], em = memes['data']['embed_url'])
+    return render_template("feed.html", dog_link = dict['url'], cat_link = cat["file"], quote = data["body"], author = data["author"], user = username, link = memes['data']['url'], em = memes['data']['embed_url'], fact = facts["text"], )
 
 @app.route("/reload", methods=["GET", "POST"])
 def reload():
@@ -124,6 +130,16 @@ def reload():
         return redirect("/feed#doge")
     else:
         return redirect("/feed#cat")
+
+@app.route("/reload2", methods=["GET", "POST"])
+def reload2():
+    if not ("user" in session):
+        flash("You are not logged in.")
+        return redirect("/")
+    if request.method == "POST":
+        return redirect("/feed#fact")
+    else:
+        return redirect("/feed#quote")
 
 # logout route
 @app.route("/logout")
