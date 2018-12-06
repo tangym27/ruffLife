@@ -167,7 +167,7 @@ def quote():
     d = json.loads(s)
     session.pop('_flashes', None)
     flashMessage = "TO LIKE QUOTE, PLEASE LOG IN!!"
-    flash(flashMessage)
+    #flash(flashMessage)
     liked = d['quote']['body']
     liked_a = d['quote']["author"]
     return render_template("quote.html", link = d['quote']['body'], auth = d['quote']["author"] )
@@ -194,7 +194,7 @@ def catpic():
     print (username)
     liked = d['file']
     flashMessage = "TO LIKE PHOTO, PLEASE LOG IN!!"
-    flash(flashMessage)
+    #flash(flashMessage)
     # otherwise, load the feed
     return render_template("catpic.html", link = d['file'])
 
@@ -217,7 +217,7 @@ def dogpic():
     liked = d['url']
 
     flashMessage = "TO LIKE PHOTO, PLEASE LOG IN!!"
-    flash(flashMessage)
+    #flash(flashMessage)
     # otherwise, load the feed
     return render_template("dogpic.html", link = d['url'])
 
@@ -238,13 +238,10 @@ def fact():
     d = json.loads(s)
     session.pop('_flashes', None)
     flashMessage = "TO LIKE FACT, PLEASE LOG IN!!"
-    flash(flashMessage)
+    #flash(flashMessage)
     liked = d['text']
     print("dfadsfds")
-
     print (liked)
-    add_fact()
-
     # otherwise, load the feed
     return render_template("fact.html", link = d['text'])
 
@@ -267,7 +264,7 @@ def meme():
     print(d['data']['url'])
     session.pop('_flashes', None)
     flashMessage = "TO LIKE GIF, PLEASE LOG IN!!"
-    flash(flashMessage)
+    #flash(flashMessage)
     # otherwise, load the feed
     return render_template("meme.html",link = d['data']['url'], em = d['data']['embed_url'])
 
