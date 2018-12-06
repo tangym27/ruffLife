@@ -11,18 +11,51 @@ Project 1 - ArRESTed Development
   <head>
     <title>{% block header %}Sign Up Here!{% endblock %}</title>
   </head>
+
   <body>
     {% block body %}
+    <center>
 
-    <form action="/authenticate" method="POST">
-        <input type="text" name="user" placeholder="Username">
-        <input type="password" name="pass1" placeholder="Password" required>
-        <input type="password" name="pass2" placeholder="Re-enter Password" required>
+      <div class="container">
+        <div class="col-md-12">
+          <br><br>
+        </div>
+        <img src="/static/logo.png" alt="logo" width="250">
         <br><br>
-        <input type="submit" value="Submit!" />
-    </form>
+        <div class="intro">
+          <h1><b> Sign Up </h1></b>
+        </div>
+        <br>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class= "signuper">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <form action="/authenticate" method="POST">
+                <input type="text" name="user" placeholder="Username">
+                <br> <br>
+                <input type="password" name="pass1" placeholder="Password" required>
+                <br> <br>
+                <input type="password" name="pass2" placeholder="Re-enter Password" required>
+                <br><br>
+                <input type="submit" value="Submit!" />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-sm-12'>
+          <br>
+  </div>
+
+  </div>
+    </center>
 
     {% endblock %}
-
   </body>
+
 </html>
