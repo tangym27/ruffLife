@@ -156,7 +156,9 @@ def quote():
     s = urllib.request.urlopen(url)
     s = s.read()
     d = json.loads(s)
-    flash("LOG IN TO LIKE ITEMS!!")
+    session.pop('_flashes', None)
+    flashMessage = "TO LIKE QUOTE, PLEASE LOG IN!!"
+    flash(flashMessage)
     return render_template("quote.html", link = d['quote']['body'], auth = d['quote']["author"] )
 
 @app.route("/catpic")
@@ -167,7 +169,7 @@ def catpic():
     s = s.read()
     d = json.loads(s)
     session.pop('_flashes', None)
-    flashMessage = "LOG IN TO LIKE ITEMS!!"
+    flashMessage = "TO LIKE PHOTO, PLEASE LOG IN!!"
     flash(flashMessage)
     # otherwise, load the feed
     return render_template("catpic.html", link = d['file'])
@@ -178,7 +180,9 @@ def dogpic():
     s = urllib.request.urlopen(url)
     s = s.read()
     d = json.loads(s)
-    flash("LOG IN TO LIKE ITEMS!!")
+    session.pop('_flashes', None)
+    flashMessage = "TO LIKE PHOTO, PLEASE LOG IN!!"
+    flash(flashMessage)
     # otherwise, load the feed
     return render_template("dogpic.html", link = d['url'])
 
@@ -188,14 +192,26 @@ def fact():
     s = urllib.request.urlopen(url)
     s = s.read()
     d = json.loads(s)
-    flash("LOG IN TO LIKE ITEMS!!")
+    session.pop('_flashes', None)
+    flashMessage = "TO LIKE FACT, PLEASE LOG IN!!"
+    flash(flashMessage)
     # otherwise, load the feed
     return render_template("fact.html", link = d['text'])
 
 @app.route("/meme")
 def meme():
+    global flashMessage
+    api = "SRjFBkxPqxKoBspQ2HdwQxt4wsDnbArq"
+    url = "http://api.giphy.com/v1/gifs/random?api_key=SRjFBkxPqxKoBspQ2HdwQxt4wsDnbArq&tag=meme&rating=pg"
+    s = urllib.request.urlopen(url)
+    s = s.read()
+    d = json.loads(s)
+    print(d['data']['url'])
+    session.pop('_flashes', None)
+    flashMessage = "TO LIKE GIF, PLEASE LOG IN!!"
+    flash(flashMessage)
     # otherwise, load the feed
-    return render_template("meme.html")
+    return render_template("meme.html",link = d['data']['url'], em = d['data']['embed_url'])
 
 @app.route("/like")
 def like():
