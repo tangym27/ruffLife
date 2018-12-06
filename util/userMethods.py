@@ -63,7 +63,7 @@ def createAccount(user,pswd,passConf):
             return "Passwords do not match"
         #if password confirmation succeeds add the user to the database
         userdb="INSERT INTO userInfo(username, pass, liked_img, liked_words) VALUES( ?, ?, ?, ?)"
-        c.execute(userdb,(user,pswd,"liked_img_demo","liked_words_demo"))
+        c.execute(userdb,(user,pswd,"",""))
         db.commit()
         db.close()
         return "Account creation successful"
@@ -72,11 +72,14 @@ def likedImages(user):
     '''This function returns a string of all of the url a user has liked'''
     db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
-    c.execute("SELECT * FROM userInfo WHERE username = ?",(user,))
+    c.execute("SELECT liked_img FROM userInfo WHERE username = ?",(user,))
     url_list = c.fetchall()
-    url_list= str(url_list[0][3])
+    url_list= str(url_list[0][0])
+
     db.commit()
     db.close()
+    print("URL LIST IS HERE AND IT SHOULD BE CORRECT IDK")
+    print(url_list)
     return url_list
 
 def addImage(user,url):
@@ -85,7 +88,7 @@ def addImage(user,url):
     c = db.cursor()
     url_list = likedImages(user)
     url_list = url_list + "," + url
-    print ("URLLL HERE: \n")
+    print ("URLLL HERE:")
     print (url_list)
     c.execute("UPDATE userInfo SET liked_img = ? WHERE username = ?",(url_list, user))
     db.commit()
@@ -127,11 +130,11 @@ def test():
     db.close()
 
 create()
-# createAccount("user1","pass","pass")
-# createAccount("user2","pass","pass")
-# likedImages("user1")
-# addImage("user1", "google.com")
-# addImage("user1", "google2.com")
+createAccount("user1","pass","pass")
+createAccount("user2","pass","pass")
+likedImages("user1")
+addImage("user1", "google.com")
+addImage("user1", "google2.com")
 # likedWords("user1")
 # addWord("user1", "quote1")
 # addWord("user2", "quote2")

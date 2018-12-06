@@ -232,3 +232,10 @@ aaronL -- 2018-12-06 15:36
 - fixed base template anchor links, added reload functionality
   for quotes and facts
 ==============================================================
+
+aaronL, michelleT, boL -- 2018-12-06 17:58
+--------------------------------------------------------------
+- got liked images to work, got jinja looping with a list of img
+  urls to work.
+- added global vars for all page data for render templates
+==============================================================

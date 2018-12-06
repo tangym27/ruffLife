@@ -11,364 +11,374 @@ Project 1 - ArRESTed Development
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>ruffLife</title>
+  <title>ruffLife</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="../static/feed.css" rel="stylesheet">
-    <style>
-    .limited {
-        max-height: 70%;
-        max-width: 70%;
-    }
+  <!-- Custom styles for this template -->
+  <link href="../static/feed.css" rel="stylesheet">
+  <style>
+  .limited {
+    max-height: 70%;
+    max-width: 70%;
+  }
 
-    .speech-bubble {
-        position: relative;
-        background: #f0da99;
-        border-radius: .4em;
-        padding: 25px;
-    }
+  .speech-bubble {
+    position: relative;
+    background: #f0da99;
+    border-radius: .4em;
+    padding: 25px;
+  }
 
-    .speech-bubble p{
-        font-size: 20px;
-    }
+  .speech-bubble p{
+    font-size: 20px;
+  }
 
 
-    .speech-bubble:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 0;
-        border: 32px solid transparent;
-        border-top-color: #f0da99;
-        border-bottom: 0;
-        margin-left: -32px;
-        margin-bottom: -32px;
-    }
+  .speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 32px solid transparent;
+    border-top-color: #f0da99;
+    border-bottom: 0;
+    margin-left: -32px;
+    margin-bottom: -32px;
+  }
 
-    </style>
+  </style>
 </head>
 
 <body id="page-top">
-    <div container = 'navbar'>
-        <div class="container-full-bg">
-            <nav class="navbar sticky-top navbar-dark ">
-                <a href="/"><button class="btn btn-md btn-link" type="button" ></button>Home</a>
-                <a href="/feed"><button class="btn btn-md btn-link" type="button"></button>Personal Feed</a>
-                <a href="/catpic"><button class="btn btn-md btn-link" type="button"></button>Cat Picture</a>
-                <a href="/dogpic"><button class="btn btn-md btn-link" type="button"></button>Dog Picture</a>
-                <a href="/fact"><button class="btn btn-md btn-link" type="button"></button>Random Fact</a>
-                <a href="/meme"><button class="btn btn-md btn-link" type="button"></button>Funny Meme</a>
-                <a href="/quote"><button class="btn btn-md btn-link" type="button">  </button>Inspirational Quote</a>
-                <a href="/logout"><button class="btn btn-md btn-link" type="button"></button>Log In/Out</a>
-            </nav></div></div>
+  <div container = 'navbar'>
+    <div class="container-full-bg">
+      <nav class="navbar sticky-top navbar-dark ">
+        <a href="/"><button class="btn btn-md btn-link" type="button" ></button>Home</a>
+        <a href="/feed"><button class="btn btn-md btn-link" type="button"></button>Personal Feed</a>
+        <a href="/catpic"><button class="btn btn-md btn-link" type="button"></button>Cat Picture</a>
+        <a href="/dogpic"><button class="btn btn-md btn-link" type="button"></button>Dog Picture</a>
+        <a href="/fact"><button class="btn btn-md btn-link" type="button"></button>Random Fact</a>
+        <a href="/meme"><button class="btn btn-md btn-link" type="button"></button>Funny Meme</a>
+        <a href="/quote"><button class="btn btn-md btn-link" type="button">  </button>Inspirational Quote</a>
+        <a href="/logout"><button class="btn btn-md btn-link" type="button"></button>Log In/Out</a>
+      </nav></div></div>
 
-            <nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top" id="sideNav">
-                <a class="navbar-brand" href="#page-top">
-                    <span class="d-block d-lg-none">ruffLife</span>
-                    <span class="d-none d-lg-block">
-                        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="../static/logo.png" alt="">
-                    </span>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#doge">Doge</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#cat">Cat</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#meme">Meme</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#quotes">Quotes</a>
-                        </li>
-			<li class="nav-item">
-                            <a class="nav-link" href="#liked">Liked Images</a>
-                        </li>	
-                        <li class="nav-item">
-                            <a class="nav-link" href="/logout">Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand" href="#page-top">
+          <span class="d-block d-lg-none">ruffLife</span>
+          <span class="d-none d-lg-block">
+            <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="../static/logo.png" alt="">
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#doge">Doge</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cat">Cat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#meme">Meme</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#quotes">Quotes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#liked">Liked Images</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-            <div class="container-fluid p-0">
+      <div class="container-fluid p-0">
 
-                <section class="feed-section p-3 p-lg-5 d-flex d-column" id="about">
-                    <div class="my-auto">
-                        <h1 class="mb-0">ruff
-                            <span class="text-primary">Life</span>
-                        </h1>
-                        <div class="subheading mb-5">Xiaojie(Aaron) Li · Kaitlin Wan · Bo Hui Lu ·
-                            <a href="">Michelle Tang</a>
-                        </div>
-                        <h3 class="mb-0">Welcome
-                            <span class="text-warning">{{ user }}</span>
-                        </h3>
-                        <p class="lead mb-5">Here at ruffLife, we strive to make your every day relaxing, enjoyable, and full of happiness. Enjoy dog or cat pictures, cat facts, and daily quotes that will be sure to make you smile.</p>
+        <section class="feed-section p-3 p-lg-5 d-flex d-column" id="about">
+          <div class="my-auto">
+            <div class="alert alert-success">
+              {% set msgs = get_flashed_messages() %}
+              {% for each in msgs%}
+              {{each}}
+              {% endfor %}
 
-                    </div>
-                </section>
+            </div>
+            <h1 class="mb-0">ruff
+              <span class="text-primary">Life</span>
+            </h1>
+            <div class="subheading mb-5">Xiaojie(Aaron) Li · Kaitlin Wan · Bo Hui Lu ·
+              <a href="">Michelle Tang</a>
+            </div>
+            <h3 class="mb-0">Welcome
+              <span class="text-warning">{{ user }}</span>
+            </h3>
+            <p class="lead mb-5">Here at ruffLife, we strive to make your every day relaxing, enjoyable, and full of happiness. Enjoy dog or cat pictures, cat facts, and daily quotes that will be sure to make you smile.</p>
 
-                <hr class="m-0">
+          </div>
+        </section>
 
-                <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="doge">
-                    <div class="my-auto">
-                        <h2 class="mb-5">Doge</h2>
+        <hr class="m-0">
 
-                        <div class="feed-item d-flex flex-column flex-md-row mb-5">
-                            <div class="feed-content mr-auto">
-                                <h3 class="mb-0">Here be random doge. Aren't they just cute?</h3>
-                                <br>
-                                <!-- <div class="subheading mb-3">Intelitec Solutions</div> -->
-                                <img class="limited" src="{{ dog_link }}" alt = "reload">
-                            </div>
-                            <div class="feed-date text-md-right">
-                                <span class="text-primary"><a href="{{ dog_link }}" target="_blank">Link to Pic</a></span>
-                                <br><br>
-                                <span><a href="/add_dog"><i class="fa fa-thumbs-o-up" style="font-size: 50px; color: black;">Like</i></a></span>
-                                <br><br>
-                                <form action = "/reload" method = "POST">
-                                    <button class="btn btn-default" type="submit">
-                                        <i class="fa fa-refresh" style="font-size: 50px; color: black;">Reload</i>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
+        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="doge">
+          <div class="my-auto">
+            <h2 class="mb-5">Doge</h2>
 
-
-                    </div>
-
-                </section>
-
-                <hr class="m-0">
-
-                <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="cat">
-                    <div class="my-auto">
-                        <h2 class="mb-5">Cats · Los Gatos </h2>
-
-                        <div class="feed-item d-flex flex-column flex-md-row mb-5">
-                            <div class="feed-content mr-auto">
-                                <h3 class="mb-0">Here be random cat. Purrrrr!</h3>
-                                <br>
-                                <img class="limited" src="{{ cat_link }}" alt = "reload">
-                                <br><br>
-                                <span class="text-md-left">
-                                    <a href="/add_cat">
-                                        <button class="btn btn-transparent">
-                                            <i class="fa fa-thumbs-o-up" style="font-size: 25px; color: black;">Like &nbsp;</i>
-                                        </button>
-                                    </a>
-                                    <a href="/reload">
-                                        <button class="btn btn-default">
-                                            <i class="fa fa-refresh" style="font-size: 25px; color: black;">Another Pic</i>
-                                        </button>
-                                    </a>
-                                </span>
-                                <br><br>
-                            </div>
-                            <div class="feed-date text-md-right">
-                                <span class="text-primary"><a href="{{ cat_link }}" target="_blank">Link to Pic</a></span>
-                                <br><br>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-                <hr class="m-0">
-
-                <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="quote">
-                    <div class="my-auto">
-                        <h1 class="mb-0 mt-0">Quote of the
-                            <span class="text-primary">Day</span>
-                        </h1>
-                        <div class="subheading mb-5">we hope your day will be exciting, refreshing, and relaxing!</div>
-                        <div class="container">
-                            <div class="container2">
-                                <div class="speech-bubble">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class='col-sm-1'>
-                                                <h3> " </h3>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-
-                                            <div class="col-sm-12">
-                                                <div>
-                                                    <blockquote class="blockquote">
-                                                        <h3 class="mb-1">{{ quote }}</h3>
-                                                        <div class="row">
-                                                            <div class='col-sm-12'>
-                                                                <div align="right">
-                                                                    <h3> " </h3>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div align="right">
-                                                            <footer class="blockquote-footer"><cite title="Source Title"> {{ author }}</cite></footer>
-                                                        </div>
-                                                    </blockquote>
-                                                    <br>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class = "row">
-                                            <div class = "col-sm-10">
-                                                <div align="right">
-                                                    <h5> {{ auth }} </h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <br><br>
-                            <center>
-                                <a href="/add_quote">
-                                    <button class="btn btn-transparent">
-                                        <i class="fa fa-thumbs-o-up" style="font-size: 25px; color: black;">Like &nbsp;</i>
-                                    </button>
-                                </a>
-                                <form action = "/reload2" method = "GET">
-                                    <button class="btn btn-default" type="submit">
-                                        <i class="fa fa-refresh" style="font-size: 50px; color: black;">Reload</i>
-                                    </button>
-                                </form>
-                                <br><br>
-                            </center>
-                        </div>
-
-                    </div>
-                </section>
-
-                <hr class="m-0">
-
-                <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="fact">
-                    <div class="my-auto">
-                        <h1 class="mb-0 mt-0">random
-                            <span class="text-primary">Fact</span>
-                        </h1>
-                        <div class="subheading mb-5">Today is a good day to learn something new!</div>
-                        <div class="container">
-                            <div class="container2">
-                                <div class="speech-bubble">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class='col-sm-1'>
-                                                <h3> " </h3>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-
-                                            <div class="col-sm-12">
-                                                <div align = "center">
-                                                    {{ fact }}
-                                                    <br>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class='col-sm-12'>
-                                                <div align="right">
-                                                    <h3> " </h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class = "row">
-                                            <div class = "col-sm-10">
-                                                <div align="right">
-                                                    <h5> {{ auth }} </h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <br><br><br>
-                            <center>
-                                <form action = "/reload2" method = "POST">
-                                    <button class="btn btn-default" type="submit">
-                                        <i class="fa fa-refresh" style="font-size: 50px; color: black;">Reload</i>
-                                    </button>
-                                </form>
-                                <br><br>
-                            </center>
-                        </div>
-
-                    </div>
-                </section>
-
-                <hr class="m-0">
-
-                <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="meme">
-                    <div class="my-auto">
-                        <h2 class="mb-5">Meeeeeeeme</h2>
-
-                        <div class="feed-item d-flex flex-column flex-md-row mb-5">
-                            <div class="feed-content mr-auto">
-                                <h3 class="mb-0">Here a meme. Pls appreciate.</h3>
-                                <br>
-                                <iframe src="{{em}}" width="480" height="317" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="{{link}}">via GIPHY</a></p>
-                            </div>
-                            <div class="feed-date text-md-right">
-                                <span class="text-primary"><a href="{{ dog_link }}" target="_blank">Link to Pic</a></span>
-                                <br><br>
-                                <span><a href="/like"><i class="fa fa-thumbs-o-up" style="font-size: 50px; color: black;">Like</i></a></span>
-                                <br><br>
-                                <form action = "/reload" method = "POST">
-                                    <button class="btn btn-default" type="submit">
-                                        <i class="fa fa-refresh" style="font-size: 50px; color: black;">Reload</i>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </section>
-		
-		<hr class="m-0">
-
-                <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="liked">
-                    <div class="my-auto">
-                        <h1 class="mb-0 mt-0">liked
-                            <span class="text-primary">Images</span>
-                        </h1>
-                        <div class="subheading mb-5">Below you can find all your liked images and quotes!</div>
-                        
-			{% for url in urls %}
-
-			{% endfor %}
-                    </div>
-                </section>
-]
+            <div class="feed-item d-flex flex-column flex-md-row mb-5">
+              <div class="feed-content mr-auto">
+                <h3 class="mb-0">Here be random doge. Aren't they just cute?</h3>
+                <br>
+                <!-- <div class="subheading mb-3">Intelitec Solutions</div> -->
+                <img class="limited" src="{{ dog_link }}" alt = "reload">
+              </div>
+              <div class="feed-date text-md-right">
+                <span class="text-primary"><a href="{{ dog_link }}" target="_blank">Link to Pic</a></span>
+                <br><br>
+                <span><a href="/add_dog"><i class="fa fa-thumbs-o-up" style="font-size: 50px; color: black;">Like</i></a></span>
+                <br><br>
+                <form action = "/reload" method = "POST">
+                  <button class="btn btn-default" type="submit">
+                    <i class="fa fa-refresh" style="font-size: 50px; color: black;">Reload</i>
+                  </button>
+                </form>
+              </div>
             </div>
 
-        </body>
 
-        </html>
+          </div>
+
+        </section>
+
+        <hr class="m-0">
+
+        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="cat">
+          <div class="my-auto">
+            <h2 class="mb-5">Cats · Los Gatos </h2>
+            <div class="feed-item d-flex flex-column flex-md-row mb-5">
+              <div class="feed-content mr-auto">
+                <h3 class="mb-0">Here be random cat. Purrrrr!</h3>
+                <br>
+                <img class="limited" src="{{ cat_link }}" alt = "reload">
+                <br><br>
+                <span class="text-md-left">
+                  <form action="/add_cat">
+                    <button class="btn btn-transparent" type="submit">
+                      <i class="fa fa-thumbs-o-up" style="font-size: 25px; color: black;">Like &nbsp;</i>
+                    </button>
+                  </form>
+                  <a href="/reload">
+                    <button class="btn btn-default">
+                      <i class="fa fa-refresh" style="font-size: 25px; color: black;">Another Pic</i>
+                    </button>
+                  </a>
+                </span>
+                <br><br>
+              </div>
+              <div class="feed-date text-md-right">
+                <span class="text-primary"><a href="{{ cat_link }}" target="_blank">Link to Pic</a></span>
+                <br><br>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <hr class="m-0">
+
+        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="quote">
+          <div class="my-auto">
+            <h1 class="mb-0 mt-0">Quote of the
+              <span class="text-primary">Day</span>
+            </h1>
+            <div class="subheading mb-5">we hope your day will be exciting, refreshing, and relaxing!</div>
+            <div class="container">
+              <div class="container2">
+                <div class="speech-bubble">
+                  <div class="container">
+                    <div class="row">
+                      <div class='col-sm-1'>
+                        <h3> " </h3>
+                      </div>
+                    </div>
+                    <div class="row">
+
+                      <div class="col-sm-12">
+                        <div>
+                          <blockquote class="blockquote">
+                            <h3 class="mb-1">{{ quote }}</h3>
+                            <div class="row">
+                              <div class='col-sm-12'>
+                                <div align="right">
+                                  <h3> " </h3>
+                                </div>
+                              </div>
+                            </div>
+                            <div align="right">
+                              <footer class="blockquote-footer"><cite title="Source Title"> {{ author }}</cite></footer>
+                            </div>
+                          </blockquote>
+                          <br>
+                        </div>
+                      </div>
+                    </div>
+                    <div class = "row">
+                      <div class = "col-sm-10">
+                        <div align="right">
+                          <h5> {{ auth }} </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <br><br>
+              <center>
+                <a href="/add_quote">
+                  <button class="btn btn-transparent">
+                    <i class="fa fa-thumbs-o-up" style="font-size: 25px; color: black;">Like &nbsp;</i>
+                  </button>
+                </a>
+                <form action = "/reload2" method = "GET">
+                  <button class="btn btn-default" type="submit">
+                    <i class="fa fa-refresh" style="font-size: 50px; color: black;">Reload</i>
+                  </button>
+                </form>
+                <br><br>
+              </center>
+            </div>
+
+          </div>
+        </section>
+
+        <hr class="m-0">
+
+        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="fact">
+          <div class="my-auto">
+            <h1 class="mb-0 mt-0">random
+              <span class="text-primary">Fact</span>
+            </h1>
+            <div class="subheading mb-5">Today is a good day to learn something new!</div>
+            <div class="container">
+              <div class="container2">
+                <div class="speech-bubble">
+                  <div class="container">
+                    <div class="row">
+                      <div class='col-sm-1'>
+                        <h3> " </h3>
+                      </div>
+                    </div>
+                    <div class="row">
+
+                      <div class="col-sm-12">
+                        <div align = "center">
+                          {{ fact }}
+                          <br>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class='col-sm-12'>
+                        <div align="right">
+                          <h3> " </h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class = "row">
+                      <div class = "col-sm-10">
+                        <div align="right">
+                          <h5> {{ auth }} </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <br><br><br>
+              <center>
+                <form action = "/reload2" method = "POST">
+                  <button class="btn btn-default" type="submit">
+                    <i class="fa fa-refresh" style="font-size: 50px; color: black;">Reload</i>
+                  </button>
+                </form>
+                <br><br>
+              </center>
+            </div>
+
+          </div>
+        </section>
+
+        <hr class="m-0">
+
+        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="meme">
+          <div class="my-auto">
+            <h2 class="mb-5">Meeeeeeeme</h2>
+
+            <div class="feed-item d-flex flex-column flex-md-row mb-5">
+              <div class="feed-content mr-auto">
+                <h3 class="mb-0">Here a meme. Pls appreciate.</h3>
+                <br>
+                <iframe src="{{em}}" width="480" height="317" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="{{link}}">via GIPHY</a></p>
+              </div>
+              <div class="feed-date text-md-right">
+                <span class="text-primary"><a href="{{ dog_link }}" target="_blank">Link to Pic</a></span>
+                <br><br>
+                <span><a href="/like"><i class="fa fa-thumbs-o-up" style="font-size: 50px; color: black;">Like</i></a></span>
+                <br><br>
+                <form action = "/reload" method = "POST">
+                  <button class="btn btn-default" type="submit">
+                    <i class="fa fa-refresh" style="font-size: 50px; color: black;">Reload</i>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+
+          </div>
+        </section>
+
+        <hr class="m-0">
+
+        <section class="feed-section p-3 p-lg-5 d-flex flex-column" id="liked">
+          <div class="my-auto">
+            <h1 class="mb-0 mt-0">liked
+              <span class="text-primary">Images</span>
+            </h1>
+            <div class="subheading mb-5">Below you can find all your liked images and quotes!</div>
+
+
+                {% set urls = img_urls %}
+                {% for each in urls%}
+                <img src="{{ each }}" alt="cat"> <br>
+                {% endfor %}
+
+
+
+          </div>
+        </section>
+      </div>
+
+    </body>
+
+    </html>

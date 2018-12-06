@@ -19,6 +19,7 @@ app = Flask(__name__)
 app.secret_key = os.urandom(32)
 username = ""
 flashMessage = ""
+liked_cats = ""
 
 # root route
 @app.route("/")
@@ -73,6 +74,17 @@ def authenticate():
 # for logged in users: their complete page
 @app.route("/feed")
 def feed():
+    global username
+    global liked_cats
+    global liked_dogs
+    global liked_quotes
+    global liked_facts
+    global dict
+    global data
+    global memes
+    global facts
+    global cat
+
     # if user not logged in redirect them
     if not("user" in session):
         flash("You are not logged in.")
@@ -117,9 +129,17 @@ def feed():
     straw = straw.read()
     facts = json.loads(straw)
     print(facts["text"])
-
+    urls = userMethods.likedImages(username)
+    print(urls)
     # otherwise, load the feed
-    return render_template("feed.html", dog_link = dict['url'], cat_link = cat["file"], quote = data["body"], author = data["author"], user = username, link = memes['data']['url'], em = memes['data']['embed_url'], fact = facts["text"], )
+    liked_cats = cat["file"]
+    print("\n\nPRINTING LIKED_CATS\n")
+    print(liked_cats)
+    liked_dogs = dict["url"]
+    liked_quotes = data["body"]
+    liked_facts = facts["text"]
+    return render_template("feed.html", dog_link = dict['url'], cat_link = cat["file"], quote = data["body"], author = data["author"],
+                            user = username, link = memes['data']['url'], em = memes['data']['embed_url'], fact = facts["text"])
 
 @app.route("/reload", methods=["GET", "POST"])
 def reload():
@@ -216,10 +236,30 @@ def catpic():
 
 @app.route("/add_cat")
 def add_cat():
-    global liked
     global username
-    userMethods.addImage(username, liked)
-    return render_template("catpic.html", link = liked)
+    global liked_cats
+    global liked_dogs
+    global liked_quotes
+    global liked_facts
+    global dict
+    global data
+    global memes
+    global facts
+    global cat
+
+    print("dkfjhasldkfjdslk")
+    print (liked_cats)
+    print(username)
+    userMethods.addImage(username, liked_cats)
+    images = userMethods.likedImages(username)
+    images = images.split(",")
+    images = images[1:]
+    print("\n\n\nPRINTING IMAGES============\n")
+    print(images[1])
+    session.pop('_flashes', None)
+    flash("Image liked. Go to liked pictures to see it!")
+
+    return render_template("feed.html", dog_link = dict['url'], cat_link = cat["file"], quote = data["body"], author = data["author"], user = username, link = memes['data']['url'], em = memes['data']['embed_url'], fact = facts["text"], img_urls = images)
 
 @app.route("/dogpic")
 def dogpic():
