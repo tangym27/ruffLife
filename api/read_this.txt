@@ -1,0 +1,1 @@
+Hi! Please upload your api key from GIPHY in this folder under the name "meme.txt". For instructions on how to get this key, see the README.
