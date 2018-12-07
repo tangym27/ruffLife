@@ -17,9 +17,9 @@ app = Flask(__name__)
 
 # generate random key
 app.secret_key = os.urandom(32)
-username = ""
-flashMessage = ""
-liked_cats = ""
+username = flashMessage = ""
+liked_cats = liked_dogs = liked_quotes = liked_facts = ""
+images = []
 
 # root route
 @app.route("/")
@@ -72,7 +72,7 @@ def authenticate():
         flash(loginStatus)
         return redirect("/")
 # for logged in users: their complete page
-@app.route("/feed")
+@app.route("/feed", methods=["GET"])
 def feed():
     global username
     global liked_cats
@@ -84,6 +84,7 @@ def feed():
     global memes
     global facts
     global cat
+    global images
 
     # if user not logged in redirect them
     if not("user" in session):
@@ -138,9 +139,18 @@ def feed():
     liked_dogs = dict["url"]
     liked_quotes = data["body"]
     liked_facts = facts["text"]
-    return render_template("feed.html", dog_link = dict['url'], cat_link = cat["file"], quote = data["body"], author = data["author"],
-                            user = username, link = memes['data']['url'], em = memes['data']['embed_url'], fact = facts["text"])
+    return render_template("feed.html",
+                            dog_link = dict['url'],
+                            cat_link = cat["file"],
+                            quote = data["body"],
+                            author = data["author"],
+                            user = username,
+                            link = memes['data']['url'],
+                            em = memes['data']['embed_url'],
+                            fact = facts["text"],
+                            img_urls = images)
 
+# reload route will refresh page and go to appropriate section
 @app.route("/reload", methods=["GET", "POST"])
 def reload():
     if not ("user" in session):
@@ -151,6 +161,8 @@ def reload():
     else:
         return redirect("/feed#cat")
 
+# reload route for facts and quotes, will refresh and go to
+# appropriate section
 @app.route("/reload2", methods=["GET", "POST"])
 def reload2():
     if not ("user" in session):
@@ -246,20 +258,20 @@ def add_cat():
     global memes
     global facts
     global cat
+    global images
 
-    print("dkfjhasldkfjdslk")
-    print (liked_cats)
+    # print("dkfjhasldkfjdslk")
+    # print (liked_cats)
     print(username)
     userMethods.addImage(username, liked_cats)
     images = userMethods.likedImages(username)
     images = images.split(",")
     images = images[1:]
     print("\n\n\nPRINTING IMAGES============\n")
-    print(images[1])
+    print(images)
     session.pop('_flashes', None)
     flash("Image liked. Go to liked pictures to see it!")
-
-    return render_template("feed.html", dog_link = dict['url'], cat_link = cat["file"], quote = data["body"], author = data["author"], user = username, link = memes['data']['url'], em = memes['data']['embed_url'], fact = facts["text"], img_urls = images)
+    return redirect("/feed")
 
 @app.route("/dogpic")
 def dogpic():

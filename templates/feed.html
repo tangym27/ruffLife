@@ -117,13 +117,13 @@ Project 1 - ArRESTed Development
 
         <section class="feed-section p-3 p-lg-5 d-flex d-column" id="about">
           <div class="my-auto">
-            <div class="alert alert-success">
               {% set msgs = get_flashed_messages() %}
               {% for each in msgs%}
-              {{each}}
+              <div class="alert alert-success">
+                  {{each}}
+              </div>
               {% endfor %}
-
-            </div>
+              
             <h1 class="mb-0">ruff
               <span class="text-primary">Life</span>
             </h1>

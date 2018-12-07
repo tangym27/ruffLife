@@ -239,3 +239,9 @@ aaronL, michelleT, boL -- 2018-12-06 17:58
   urls to work.
 - added global vars for all page data for render templates
 ==============================================================
+
+aaronL -- 2018-12-06 21:43
+--------------------------------------------------------------
+- fixed some page reloading issues with url fragments and
+  hide alert until flash
+==============================================================
