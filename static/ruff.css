@@ -13,14 +13,13 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 20%;
-    overflow: hidden;
+    /* overflow: hidden; */
 
 }
 
 a {
     color: #ffffff;
     text-decoration: none;
-    background-color: transparent;
 }
 
 .signuper{
@@ -32,18 +31,18 @@ a {
 }
 
 
-.titlefor h2{
-    color: rgb(46, 8, 54)
-}
+/* .titlefor h2{
+    color: rgb(46, 8, 54);
+} */
 
 .intro h1{
-    color: rgb(33, 12, 41);
+    color: #1a2e69;
 }
 
-.navbar button {
+/* .navbar button {
     outline: none;
     color: transparent;
-}
+} */
 
 .btn:hover{
     text-decoration: none;
@@ -65,7 +64,7 @@ a {
 
 .speech-bubble {
     position: relative;
-    background: #f0da99;
+    background: #9cc5cf;
     border-radius: .4em;
     padding: 25px;
 }
@@ -83,36 +82,38 @@ a {
     width: 0;
     height: 0;
     border: 32px solid transparent;
-    border-top-color: #f0da99;
+    border-top-color: #9cc5cf;
     border-bottom: 0;
     margin-left: -32px;
     margin-bottom: -32px;
 }
 
-.navbar{
-    background-color: transparent;
-    border-color: #E7E7E7;
+.navbar {
+    background-color: #5c9ead;
+    /* border-color: #E7E7E7; */
 }
 
-.navbar-nav > li > a:hover {
+.
+
+/* .navbar-nav > li > a:hover {
     background-color: white;
-}
+} */
 
 .intro h1 {
     color: white;
 }
 
 
-.signuper  [type=submit]{
+/* .signuper  [type=submit]{
     background-image: linear-gradient(to right top, #f3b00e, #f6ba34, #f9c34d, #fccd63, #ffd679);
     color: white;
     border-radius: 12px;
-}
+} */
 
 .glow {
-    text-shadow: #574a22 0 0 10px;
+    text-shadow: #1dc1e7 0 0 25px;
 }
 
-/* .imglow {
-    border: 0.5rem solid rgba(255, 255, 255, 0.2);
-} */
+.glow_white {
+    text-shadow: white 0 0 25px;
+}

@@ -8,36 +8,34 @@ Project 1 - ArRESTed Development
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>{% block header %}Dog Pic!{% endblock %}</title>
-  </head>
-  <body>
-{% block body %}
-  <center>
-    <br> <br>
-    <h2> (Paw)fic Picture </h2>
-    <br>
-    <img width = 50% src= {{ link }} alt = "oops... please refresh. unsupported file.">
-    <div class="container">
-      <br><br>
-      <div class = "row">
-
-        <div class = "col-sm-12">
-        <form action = "/dogpic" method = "GET">
-          <div class = "signuper">
-          <input type = "submit" value = "Get another photo!">
-          </div>
-        </form>
-        </div>
+</head>
+<body>
+    {% block body %}
+    <center>
+        <br> <br>
+        <h1 class="glow_white">(Paw)fect Picture</h1>
         <br>
-        </div>
-        <br>
-        <br>
+        <img style="height: 50%; width: 50%;" src={{ link }} alt = "dog">
+        <div class="container">
+            <br><br>
+            <div class = "row">
+
+                <div class = "col-sm-12">
+                    <form action = "/dogpic" method = "GET">
+                        <button class="btn btn-info" type="submit">Get Another Pic</button>
+                    </form>
+                </div>
+                <br>
+            </div>
+            <br>
+            <br>
 
 
-  </center>
+        </center>
 
 
-{%endblock%}
-  </body>
-</html>
+        {%endblock%}
+    </body>
+    </html>

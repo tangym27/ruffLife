@@ -10,35 +10,33 @@ Project 1 - ArRESTed Development
 <html>
 
 <head>
-  <title>{% block header %}Cat Pic!{% endblock %}</title>
+    <title>{% block header %}Cat Pic!{% endblock %}</title>
 </head>
 
 <body>
-  {%block body %}
-  <center>
-    <br> <br>
-    <div class="titlefor">
-      <h2> (Purr)fect Picture </h2>
-    </div>
+    {%block body %}
+    <center>
+        <br> <br>
+        <div class="titlefor">
+            <h1 class="glow_white">(Purr)fect Picture</h1>
+        </div>
 
-    <br>
-    <img width="50%" src={{ link }}>
-    <div class="container">
-      <br><br>
-      <div class="row">
+        <br>
+        <img style="max-width: 50%; max-height: 50%;" src={{ link }}>
+        <div class="container">
+            <br><br>
+            <div class="row">
 
-        <div class="col-sm-12">
-          <form action="/catpic" method="GET">
-            <div class = "signuper">
-            <input type = "submit" value = "Get another photo!">
-            </div>
-          </form>
-          </div>
-          <br><br>
+                <div class="col-sm-12">
+                    <form action="/catpic" method="GET">
+                        <button class="btn btn-info" type="submit">Get Another Pic</button>
+                    </form>
+                </div>
+                <br><br>
 
 
-  </center>
-  {%endblock %}
-</body>
+            </center>
+            {%endblock %}
+        </body>
 
-</html>
+        </html>

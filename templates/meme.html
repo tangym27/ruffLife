@@ -8,38 +8,39 @@ Project 1 - ArRESTed Development
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>{% block header %}MEMES!{% endblock %}</title>
-  </head>
-  <body>
-{% block body %}
-  <center>
-    <br> <br>
-    <h2> Memememememeememememememe! </h2>
-    <br>
-    <iframe src="{{em}}" width="480" height="317" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="{{link}}">via GIPHY</a></p>
-    <div class="container">
-      <br><br>
-      <div class = "row">
+</head>
+<body>
+    {% block body %}
+    <center>
+        <br> <br>
+        <h1 class="glow">Haha, What a Meme</h1>
+        <!-- <div class="alert alert-warning">Warning: content may still be explicit</div> -->
+        <br>
+        <iframe src="{{em}}" width="480" height="317" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="{{link}}">via GIPHY</a></p>
+        <div class="container">
+            <br><br>
+            <div class = "row">
 
-        <div class = "col-sm-12">
-        <form action = "/meme" method = "GET">
-          <div class = "signuper">
-          <input type = "submit" value = "Get another meme!">
-          </div>
-        </form>
+                <div class = "col-sm-12">
+                    <form action = "/meme" method = "GET">
+                        <div class = "signuper">
+                            <button class="btn btn-info" type="submit">Another One</button>
+                        </div>
+                    </form>
+                </div>
+                <br>
+            </div>
+
         </div>
         <br>
-        </div>
-
-        </div>
-        <br>
         <br>
 
 
-  </center>
+    </center>
 
 
-{%endblock%}
-  </body>
+    {%endblock%}
+</body>
 </html>

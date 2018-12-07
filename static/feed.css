@@ -155,17 +155,17 @@ section.feed-section .feed-item .feed-date {
 }
 
 .bg-primary {
-    background-color: #4adddd !important;
+    background-color: #5c9ead !important;
 }
 
 .text-primary {
-    color: #4adddd !important;
+    color: #5c9ead !important;
 }
 
 a {
-    color: #4adddd;
+    color: #5c9ead;
 }
 
 a:hover, a:focus, a:active {
-    color: #4adddd;
+    color: #5c9ead;
 }

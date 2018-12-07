@@ -19,7 +19,7 @@ app = Flask(__name__)
 app.secret_key = os.urandom(32)
 username = flashMessage = ""
 liked_cats = liked_dogs = liked_quotes = liked_facts = ""
-images = []
+images = texts = []
 
 # root route
 @app.route("/")
@@ -61,11 +61,13 @@ def authenticate():
     if loginStatus == "Account creation successful":
         session["user"] = request.form["user"]
         username = request.form["user"]
-        flash(loginStatus + ". To see your personal feed, login above.")
+        session.pop('_flashes', None)
+        flash(loginStatus)
         return render_template("index.html")
     elif loginStatus == "Login Successful":
         session["user"] = request.form["user"]
         username = request.form["user"]
+        session.pop('_flashes', None)
         flash(loginStatus)
         return redirect("/feed")
     else:
@@ -85,9 +87,11 @@ def feed():
     global facts
     global cat
     global images
+    global texts
 
     # if user not logged in redirect them
     if not("user" in session):
+        session.pop('_flashes', None)
         flash("You are not logged in.")
         return redirect("/")
 
@@ -110,41 +114,55 @@ def feed():
     straw = urllib.request.urlopen(url)
     straw = straw.read()
     cat_fact = json.loads(straw)
-    print(cat_fact['fact'])
 
     url = "https://dog-api.kinduff.com/api/facts?number=1"
     straw = urllib.request.urlopen(url)
     straw = straw.read()
     dog_fact = json.loads(straw)
-    print(dog_fact['facts'])
 
     url = urllib.request.urlopen("https://favqs.com/api/qotd")
     data = json.loads(url.read().decode())
     data = data["quote"]
-    print(data["body"])
-    print("\n-------------------\n" + username + "\n----------------------\n")
 
     api = "SRjFBkxPqxKoBspQ2HdwQxt4wsDnbArq"
     url = "http://api.giphy.com/v1/gifs/random?api_key=SRjFBkxPqxKoBspQ2HdwQxt4wsDnbArq&tag=meme&rating=pg"
     straw = urllib.request.urlopen(url)
     straw = straw.read()
     memes = json.loads(straw)
-    print(memes['data']['url'])
+
 
     url = "http://randomuselessfact.appspot.com/random.json?language=en"
     straw = urllib.request.urlopen(url)
     straw = straw.read()
     facts = json.loads(straw)
-    print(facts["text"])
+    # print(facts["text"])
     urls = userMethods.likedImages(username)
-    print(urls)
-    # otherwise, load the feed
+    # print(urls)
+
     liked_cats = cat["file"]
-    print("\n\nPRINTING LIKED_CATS\n")
-    print(liked_cats)
+    # print("\n\nPRINTING LIKED_CATS\n")
+    # print(liked_cats)
     liked_dogs = dict["url"]
     liked_quotes = data["body"]
     liked_facts = facts["text"]
+
+    texts = userMethods.likedWords(username)
+    texts = texts.split("|")
+    texts = texts[1:]
+    images = userMethods.likedImages(username)
+    images = images.split(",")
+    images = images[1:]
+
+    print("\n-------------------\n" + username + "\n----------------------\n")
+    print("\nmeme url: " + memes['data']['url'] + "\n")
+    print("\ncat fact: " + cat_fact['fact'] + "\n")
+    print("\ndog fact: ")
+    print(dog_fact['facts'])
+    print("\nquote: " + data["body"] + "\n")
+    print("----------------\ntexts: ")
+    print(texts)
+    print("----------------\nimages: ")
+    print(images)
     return render_template("feed.html",
                             dog_link = dict['url'],
                             cat_link = cat["file"],
@@ -155,13 +173,16 @@ def feed():
                             em = memes['data']['embed_url'],
                             fact = facts["text"],
                             catFact = cat_fact['fact'],
-                            dogFact = dog_fact['facts'][0],       
-                            img_urls = images)
+                            dogFact = dog_fact['facts'][0],
+                            img_urls = images,
+                            text_texts = texts)
 
 # reload route will refresh page and go to appropriate section
 @app.route("/reload", methods=["GET", "POST"])
 def reload():
+    # check if logged in
     if not ("user" in session):
+        session.pop('_flashes', None)
         flash("You are not logged in.")
         return redirect("/")
     if request.method == "POST":
@@ -173,7 +194,9 @@ def reload():
 # appropriate section
 @app.route("/reload2", methods=["GET", "POST"])
 def reload2():
+    # check if logged in
     if not ("user" in session):
+        session.pop('_flashes', None)
         flash("You are not logged in.")
         return redirect("/")
     if request.method == "POST":
@@ -181,12 +204,23 @@ def reload2():
     else:
         return redirect("/feed#quote")
 
+# reload route for memes, will go to appropriate section
+@app.route("/reloadMeme")
+def reload3():
+    # check if logged in
+    if not ("user" in session):
+        session.pop('_flashes', None)
+        flash("You are not logged in.")
+        return redirect("/")
+    return redirect("/feed#meme")
+
 # logout route
 @app.route("/logout")
 def logout():
     # pop user from session and redirect to login page(root)
     if "user" in session:
         session.pop("user")
+        session.pop('_flashes', None)
         flash("You have been logged out successfully!")
     return redirect("/")
 
@@ -200,15 +234,10 @@ def homeee():
     # otherwise, load the feed
     return redirect("/")
 
-@app.route("/feed")
-def logginnn():
-    # otherwise, load the feed
-    return render_template("feed.html")
-
-@app.route("/weather")
-def weather():
-    # otherwise, load the feed
-    return render_template("weather.html")
+# @app.route("/feed")
+# def logginnn():
+#     # otherwise, load the feed
+#     return render_template("feed.html")
 
 @app.route("/quote")
 def quote():
@@ -230,11 +259,31 @@ def quote():
 
 @app.route("/add_quote")
 def add_quote():
-    global liked
-    global liked_a
     global username
-    userMethods.addWord(username, liked)
-    return render_template("quote.html", link = liked, auth = liked_a)
+    global liked_cats
+    global liked_dogs
+    global liked_quotes
+    global liked_facts
+    global dict
+    global data
+    global memes
+    global facts
+    global cat
+    global images
+    global texts
+
+    # print("dkfjhasldkfjdslk")
+    # print (liked_cats)
+    print(username)
+    userMethods.addWord(username, liked_quotes)
+    texts = userMethods.likedWords(username)
+    texts = texts.split("|")
+    texts = texts[1:]
+    # print("\n\n\nPRINTING TEXT============\n")
+    # print(texts)
+    session.pop('_flashes', None)
+    flash("Text liked. Go to liked text to see it!")
+    return redirect("/feed")
 
 @app.route("/catpic")
 def catpic():
@@ -246,8 +295,8 @@ def catpic():
     s = s.read()
     d = json.loads(s)
     session.pop('_flashes', None)
-    print("USERNAME")
-    print (username)
+    # print("USERNAME")
+    # print (username)
     liked = d['file']
     flashMessage = "TO LIKE PHOTO, PLEASE LOG IN!!"
     #flash(flashMessage)
@@ -267,16 +316,17 @@ def add_cat():
     global facts
     global cat
     global images
+    global texts
 
     # print("dkfjhasldkfjdslk")
     # print (liked_cats)
-    print(username)
+    # print(username)
     userMethods.addImage(username, liked_cats)
     images = userMethods.likedImages(username)
     images = images.split(",")
     images = images[1:]
-    print("\n\n\nPRINTING IMAGES============\n")
-    print(images)
+    # print("\n\n\nPRINTING IMAGES============\n")
+    # print(images)
     session.pop('_flashes', None)
     flash("Image liked. Go to liked pictures to see it!")
     return redirect("/feed")
@@ -286,23 +336,49 @@ def dogpic():
     global username
     global liked
     url = "https://random.dog/woof.json"
-    s = urllib.request.urlopen(url)
-    s = s.read()
-    d = json.loads(s)
+    status = True
+    while(status):
+        straw = urllib.request.urlopen(url)
+        straw = straw.read()
+        dict = json.loads(straw)
+        print(dict["url"][-3:])
+        if(dict["url"][-3:] != "mp4"):
+            status = False
     session.pop('_flashes', None)
-    liked = d['url']
+    # liked = d['url']
 
     flashMessage = "TO LIKE PHOTO, PLEASE LOG IN!!"
     #flash(flashMessage)
     # otherwise, load the feed
-    return render_template("dogpic.html", link = d['url'])
+    return render_template("dogpic.html", link = dict['url'])
 
 @app.route("/add_dog")
 def add_dog():
-    global liked
     global username
-    userMethods.addImage(username, liked)
-    return render_template("dogpic.html", link = liked)
+    global liked_cats
+    global liked_dogs
+    global liked_quotes
+    global liked_facts
+    global dict
+    global data
+    global memes
+    global facts
+    global cat
+    global images
+    global texts
+
+    # print("dkfjhasldkfjdslk")
+    # print (liked_cats)
+    # print(username)
+    userMethods.addImage(username, liked_dogs)
+    images = userMethods.likedImages(username)
+    images = images.split(",")
+    images = images[1:]
+    # print("\n\n\nPRINTING IMAGES============\n")
+    # print(images)
+    session.pop('_flashes', None)
+    flash("Image liked. Go to liked pictures to see it!")
+    return redirect("/feed")
 
 @app.route("/fact")
 def fact():
@@ -316,18 +392,38 @@ def fact():
     flashMessage = "TO LIKE FACT, PLEASE LOG IN!!"
     #flash(flashMessage)
     liked = d['text']
-    print("dfadsfds")
-    print (liked)
-    # otherwise, load the feed
+    # print("dfadsfds")
+    # print (liked)
+    # # otherwise, load the feed
     return render_template("fact.html", link = d['text'])
 
 @app.route("/add_fact")
 def add_fact():
-    global liked
     global username
-    print(liked)
-    userMethods.addWord(username, liked)
-    return render_template("fact.html", link = liked)
+    global liked_cats
+    global liked_dogs
+    global liked_quotes
+    global liked_facts
+    global dict
+    global data
+    global memes
+    global facts
+    global cat
+    global images
+    global texts
+
+    # print("dkfjhasldkfjdslk")
+    # print (liked_cats)
+    print(username)
+    userMethods.addWord(username, liked_facts)
+    texts = userMethods.likedWords(username)
+    texts = texts.split("|")
+    texts = texts[1:]
+    # print("\n\n\nPRINTING TEXT============\n")
+    # print(texts)
+    session.pop('_flashes', None)
+    flash("Text liked. Go to liked text to see it!")
+    return redirect("/feed")
 
 @app.route("/meme")
 def meme():

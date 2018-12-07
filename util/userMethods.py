@@ -112,7 +112,7 @@ def addWord(user,word):
     db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
     words = likedWords(user)
-    words = words + "," + word
+    words = words + "|" + word
     print (words)
     c.execute("UPDATE userInfo SET liked_words = ? WHERE username = ?",(words, user))
     db.commit()
@@ -122,7 +122,6 @@ def addWord(user,word):
 def test():
     db = sqlite3.connect("data/fluffy.db")
     c = db.cursor()
-
     c.execute("SELECT * FROM userInfo;")
     results = c.fetchall()
     print (results)
@@ -130,11 +129,11 @@ def test():
     db.close()
 
 create()
-createAccount("user1","pass","pass")
-createAccount("user2","pass","pass")
-likedImages("user1")
-addImage("user1", "google.com")
-addImage("user1", "google2.com")
+# createAccount("user1","pass","pass")
+# createAccount("user2","pass","pass")
+# likedImages("user1")
+# addImage("user1", "google.com")
+# addImage("user1", "google2.com")
 # likedWords("user1")
 # addWord("user1", "quote1")
 # addWord("user2", "quote2")

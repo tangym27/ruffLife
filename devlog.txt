@@ -245,3 +245,12 @@ aaronL -- 2018-12-06 21:43
 - fixed some page reloading issues with url fragments and
   hide alert until flash
 ==============================================================
+
+aaronL -- 2018-12-07 02:07
+--------------------------------------------------------------
+- finished adding like functionality to quotes, facts, and dogs
+- finished edit styles and coordinating color schemes
+- finished fixing main page nav bar
+- finished testing for errors
+- finished project(i think)
+==============================================================

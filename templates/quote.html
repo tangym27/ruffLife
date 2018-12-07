@@ -10,68 +10,64 @@ Project 1 - ArRESTed Development
 <html>
 
 <head>
-  <title>{% block header %}Inspiration{% endblock %}</title>
+    <title>{% block header %}Inspiration{% endblock %}</title>
 </head>
 
 <body>
-  {% block body %}
-  <br><br><br><br><br>
-  <div class="container">
-    <center>
-    <h1> Inspirational.... Woah... </h1>
-    </center>
-    <br> <br>
-    <div class="container2">
-      <div class="speech-bubble">
+    {% block body %}
+    <br><br><br><br><br>
+    <div class="container">
+        <center>
+            <h1 class="glow">Whoa...Inspirational</h1>
+        </center>
+        <br> <br>
         <div class="container">
-          <div class="row">
-            <div class='col-sm-1'>
-              <h3> " </h3>
-            </div>
-          </div>
-          <div class="row">
+            <div class="container2">
+                <div class="speech-bubble">
+                    <div class="container">
+                        <div class="row">
+                            <div class='col-sm-1'>
+                                <h3> " </h3>
+                            </div>
+                        </div>
+                        <div class="row">
 
-            <div class="col-sm-12">
-              <div align = "center">
-              {{link}}
-              <br>
-              </div>
+                            <div class="col-sm-12">
+                                <div>
+                                    <blockquote class="blockquote">
+                                        <h3 class="mb-1">{{ link }}</h3>
+                                        <div class="row">
+                                            <div class='col-sm-12'>
+                                                <div align="right">
+                                                    <h3> " </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div align="right">
+                                            <footer class="blockquote-footer"><cite title="Source Title"> {{ auth }}</cite></footer>
+                                        </div>
+                                    </blockquote>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="row">
-              <div class='col-sm-12'>
-                <div align="right">
-                <h3> " </h3>
-              </div>
-            </div>
-          </div>
-          <div class = "row">
-              <div class = "col-sm-10">
-                <div align="right">
-                  <h5> - {{auth}} </h5>
-              </div>
-            </div>
-            </div>
+            <br><br><br>
+            <center>
+                <form action = "/quote" method = "GET">
+                    <button class="btn btn-info" type="submit">Another Quote</button>
+                </form>
+                <br><br>
+
+            </center>
+
         </div>
-      </div>
-
-    </div>
-    <br><br><br>
-  <center>
-    <form action = "/quote" method = "GET">
-      <div class = "signuper">
-      <input type = "submit" value = "Get another quote!">
-      </div>
-    </form>
-<br><br>
-
-</center>
-
-</div>
 
 
 
-  {% endblock %}
-</body>
+        {% endblock %}
+    </body>
 
-</html>
+    </html>

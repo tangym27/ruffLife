@@ -8,68 +8,68 @@ Project 1 - ArRESTed Development
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>{% block header %}Animal Facts!{% endblock %}</title>
-  </head>
-  <body>
+</head>
+<body>
     {% block body %}
     <br><br><br><br><br>
     <div class="container">
-      <center>
-      <h1> Learn something new... </h1>
-      <center>
-        <br>
-      <div class="container2">
-        <div class="speech-bubble">
-          <div class="container">
-            <div class="row">
-              <div class='col-sm-1'>
-                <h3> " </h3>
-              </div>
-            </div>
-            <div class="row">
-
-              <div class="col-sm-12">
-                <div align = "center">
-                {{link}}
+        <center>
+            <h1 class="glow">Congrats, You've Just Learned Something New!</h1>
+            <center>
                 <br>
+                <div class="container2">
+                    <div class="speech-bubble">
+                        <div class="container">
+                            <div class="row">
+                                <div class='col-sm-1'>
+                                    <h3> " </h3>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-sm-12">
+                                    <div align = "center">
+                                        {{link}}
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class='col-sm-12'>
+                                    <div align="right">
+                                        <h3> " </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "row">
+                                <div class = "col-sm-10">
+                                    <div align="right">
+                                        <h5> {{auth}} </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-              </div>
+                <br><br><br>
+                <center>
+                    <form action = "/fact" method = "GET">
+                        <div class = "signuper">
+                            <button class="btn btn-info" type="submit">Another Fact</button>
+                        </div>
+                    </form>
+                    <br><br>
+
+
+                </center>
+
             </div>
-            <div class="row">
-                <div class='col-sm-12'>
-                  <div align="right">
-                  <h3> " </h3>
-                </div>
-              </div>
-            </div>
-            <div class = "row">
-                <div class = "col-sm-10">
-                  <div align="right">
-                    <h5> {{auth}} </h5>
-                </div>
-              </div>
-              </div>
-          </div>
-        </div>
-
-      </div>
-      <br><br><br>
-    <center>
-      <form action = "/fact" method = "GET">
-        <div class = "signuper">
-        <input type = "submit" value = "Get another fact!">
-        </div>
-      </form>
-  <br><br>
-
-
-  </center>
-
-    </div>
 
 
 
-    {% endblock %}
-  </body>
-</html>
+            {% endblock %}
+        </body>
+        </html>
