@@ -430,7 +430,6 @@ def meme():
     global flashMessage
     f = open("./api/meme.txt", "r")
     mykey = f.readline().strip()
-    api = "SRjFBkxPqxKoBspQ2HdwQxt4wsDnbArq"
     url = "http://api.giphy.com/v1/gifs/random?api_key=" + mykey + "&tag=meme&rating=pg"
     print(url)
     s = urllib.request.urlopen(url)
@@ -443,16 +442,6 @@ def meme():
     # otherwise, load the feed
     return render_template("meme.html",link = d['data']['url'], em = d['data']['embed_url'])
 
-# @app.route("/add_meme")
-# def add_meme():
-#     global liked
-#     global username
-#     userMethods.addImage(username, liked)
-#     return render_template("dogpic.html", link = liked)
-# @app.route("/like")
-# def like():
-#     #TEMPORAY PLACEHOLDER LINK
-#     return render_template("feed.html")
 
 
 # run flask app with debug set to true
