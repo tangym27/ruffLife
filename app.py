@@ -112,6 +112,12 @@ def feed():
     cat_fact = json.loads(straw)
     print(cat_fact['fact'])
 
+    url = "https://dog-api.kinduff.com/api/facts?number=1"
+    straw = urllib.request.urlopen(url)
+    straw = straw.read()
+    dog_fact = json.loads(straw)
+    print(dog_fact['facts'])
+
     url = urllib.request.urlopen("https://favqs.com/api/qotd")
     data = json.loads(url.read().decode())
     data = data["quote"]
@@ -148,6 +154,8 @@ def feed():
                             link = memes['data']['url'],
                             em = memes['data']['embed_url'],
                             fact = facts["text"],
+                            catFact = cat_fact['fact'],
+                            dogFact = dog_fact['facts'][0],       
                             img_urls = images)
 
 # reload route will refresh page and go to appropriate section

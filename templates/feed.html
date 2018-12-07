@@ -150,17 +150,27 @@ Project 1 - ArRESTed Development
                 <br>
                 <!-- <div class="subheading mb-3">Intelitec Solutions</div> -->
                 <img class="limited" src="{{ dog_link }}" alt = "reload">
-              </div>
+		<br><br>
+		
+		<span><a href="/add_dog"><i class="fa fa-thumbs-o-up" style="font-size: 25px; color: black;">Like</i></a></span>
+		<br><br>
+		<form action = "/reload" method = "POST">
+                  <button class="btn btn-default" type="submit">
+                    <i class="fa fa-refresh" style="font-size: 25px; color: black;">Reload</i>
+                  </button>
+		</form>
+		<br>
+	      </div>
+	      
               <div class="feed-date text-md-right">
                 <span class="text-primary"><a href="{{ dog_link }}" target="_blank">Link to Pic</a></span>
                 <br><br>
-                <span><a href="/add_dog"><i class="fa fa-thumbs-o-up" style="font-size: 50px; color: black;">Like</i></a></span>
-                <br><br>
-                <form action = "/reload" method = "POST">
-                  <button class="btn btn-default" type="submit">
-                    <i class="fa fa-refresh" style="font-size: 50px; color: black;">Reload</i>
-                  </button>
-                </form>
+		<span class="text-md-left">
+  		  <h3 class="mb-0">Here be random doge fact. Woof!</h3>
+		  <br>
+		  <h4 class ="mb-0"> {{dogFact}} </h4>
+		</span>
+		
               </div>
             </div>
 
@@ -197,6 +207,11 @@ Project 1 - ArRESTed Development
               <div class="feed-date text-md-right">
                 <span class="text-primary"><a href="{{ cat_link }}" target="_blank">Link to Pic</a></span>
                 <br><br>
+		<span class="text-md-left">
+  		  <h3 class="mb-0">Here be random cat fact. Meow!</h3>
+		  <br>
+		  <h4 class ="mb-0"> {{catFact}} </h4>
+		</span>
               </div>
             </div>
 
