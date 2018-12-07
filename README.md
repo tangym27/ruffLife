@@ -13,6 +13,7 @@ API Name | Link | Key & Quota | How to Create Key
 catpic | https://aws.random.cat/meow  | no key needed and unlimited quotas! | N/A
 dogpic | https://random.dog | no key needed and unlimited quotas! | N/A
 catfact | https://catfact.ninja/ | no key needed and unlimited quotas! | N/A
+dogFact | http://kinduff.com/dog-api/ | no key needed and unlimited quotas! | N/A
 fun jokes | http://randomuselessfact.appspot.com/ | no key needed and unlimited quotas! | N/A
 gif | https://developers.giphy.com/docs/ | key is needed and there is a 10,000 search per day quota limit | Register for a developer account. Then, create an App (access through the dashboard). Fill in all required fields and save it. 
 quote of the day | https://favqs.com/api/ | no key and unlimited quotas!| N/A
