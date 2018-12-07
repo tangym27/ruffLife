@@ -9,8 +9,11 @@ html {
 }
 
 body {
-  background: url(./back6.jpg);
-  background-size: cover;
+    background: url(./back6.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    overflow: hidden;
 
 }
 
@@ -21,20 +24,20 @@ a {
 }
 
 .signuper{
-  color:rgb(252, 252, 252);
+    color:rgb(252, 252, 252);
 }
 
 .signuper a{
-  color:#f3d99f;
+    color:#f3d99f;
 }
 
 
 .titlefor h2{
-   color: rgb(46, 8, 54)
+    color: rgb(46, 8, 54)
 }
 
 .intro h1{
-  color: rgb(33, 12, 41);
+    color: rgb(33, 12, 41);
 }
 
 .navbar button {
@@ -43,62 +46,73 @@ a {
 }
 
 .btn:hover{
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .container2 {
-  position: relative;
+    position: relative;
 }
 
 .centered-element {
-  height: 100px;
-  width: 100px;
-  position: absolute;
-  left: 50%;
-  margin-left: -50px;
-  top: 50%;
-  margin-top: -50px;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -50px;
 }
 
 .speech-bubble {
-	position: relative;
-	background: #f0da99;
-	border-radius: .4em;
-  padding: 25px;
+    position: relative;
+    background: #f0da99;
+    border-radius: .4em;
+    padding: 25px;
 }
 
 .speech-bubble p{
-  font-size: 20px;
+    font-size: 20px;
 }
 
 
 .speech-bubble:after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 32px solid transparent;
-	border-top-color: #f0da99;
-	border-bottom: 0;
-	margin-left: -32px;
-	margin-bottom: -32px;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 32px solid transparent;
+    border-top-color: #f0da99;
+    border-bottom: 0;
+    margin-left: -32px;
+    margin-bottom: -32px;
 }
 
 .navbar{
-    background-color: #f3d99f;
+    background-color: transparent;
     border-color: #E7E7E7;
 }
 
+.navbar-nav > li > a:hover {
+    background-color: white;
+}
+
 .intro h1 {
-  color: white;
+    color: white;
 }
 
 
 .signuper  [type=submit]{
-background-image: linear-gradient(to right top, #f3b00e, #f6ba34, #f9c34d, #fccd63, #ffd679);
-  color: white;
-  border-radius: 12px;
-
+    background-image: linear-gradient(to right top, #f3b00e, #f6ba34, #f9c34d, #fccd63, #ffd679);
+    color: white;
+    border-radius: 12px;
 }
+
+.glow {
+    text-shadow: #574a22 0 0 10px;
+}
+
+/* .imglow {
+    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+} */

@@ -10,69 +10,69 @@ Project 1 - ArRESTed Development
 <html>
 
 <head>
-  <title>{% block header %}Home Page{% endblock %}</title>
+    <title>{% block header %}Home Page{% endblock %}</title>
 </head>
 
 <body>
-  {% block body %}
-  <center>
+    {% block body %}
+    <center>
 
-    <div class="container">
-      <div class="col-md-12">
-        <br><br>
-      </div>
-      <img src="/static/logoruff.png" alt="logo" width="250">
-      <br><br>
-      <div class="intro">
-        <h1><b> WELCOME TO RUFFLIFE </h1></b>
-      </div>
-      <br>
+        <div class="container">
+            <div class="col-md-12">
+                <br><br>
+            </div>
+            <img src="../static/logoruff.png" alt="logo" width="230">
+            <div class="intro mt-5">
+                <h1 class="glow"><b> WELCOME TO RUFFLIFE </b></h1>
+            </div>
+            <br>
 
-      <div class="row">
-        <div class="col-sm-12">
-          <div class= "signuper">
-          <h5>Login Here:</h5>
-          </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <br>
+                    <div class= "signuper">
+                        <h5 class="glow">Login Here:</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <form action="/authenticate" method="POST">
+                        <input type="text" name="user" placeholder="Username">
+                        <input type="password" name="pass" placeholder="Password">
+                        <br><br>
+                        <div class= "signuper">
+                            <input type="submit" value="Submit!" />
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12">
-          <form action="/authenticate" method="POST">
-            <input type="text" name="user" placeholder="Username">
-            <input type="password" name="pass" placeholder="Password">
-            <br><br>
-            <div class= "signuper">
-            <input type="submit" value="Submit!" />
-                  </div>
-          </form>
+        <div class='row'>
+            <div class='col-sm-12'>
+                <br>
+                <div class="signuper">
+                    Don't have an account? Sign up <a class="sign" href="/signup">HERE</a>!
+
+                    <br>
+
+
+                    <h2>
+
+                        {% set msgs = get_flashed_messages() %}
+                        {% for each in msgs%}
+                        {{each}}
+                        {% endfor %}
+
+                        {% endblock %}
+
+                    </h2>
+
+                </div>
+            </div>
+
         </div>
-      </div>
-    </div>
-    <div class='row'>
-      <div class='col-sm-12'>
-        <br>
-        <div class="signuper">
-          Don't have an account? Sign up <a class="sign" href="/signup">HERE</a>!
-
-  <br>
-
-
-   <h2>
-
-    {% set msgs = get_flashed_messages() %}
-    {% for each in msgs%}
-    {{each}}
-    {% endfor %}
-
-    {% endblock %}
-
-    </h2>
-
-  </div>
-</div>
-
-</div>
-  </center>
+    </center>
 
 </body>
 
