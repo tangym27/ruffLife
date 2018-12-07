@@ -245,3 +245,10 @@ aaronL -- 2018-12-06 21:43
 - fixed some page reloading issues with url fragments and
   hide alert until flash
 ==============================================================
+
+boL -- 2018-12-06 23:01
+
+-------------------------------------------------------------
+- added cat/dog facts
+- Final update to design doc and readme
+
