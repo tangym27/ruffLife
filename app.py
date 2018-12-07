@@ -124,8 +124,10 @@ def feed():
     data = json.loads(url.read().decode())
     data = data["quote"]
 
-    api = "SRjFBkxPqxKoBspQ2HdwQxt4wsDnbArq"
-    url = "http://api.giphy.com/v1/gifs/random?api_key=SRjFBkxPqxKoBspQ2HdwQxt4wsDnbArq&tag=meme&rating=pg"
+    fn = open("./api/meme.txt", "r")
+    mykeyn = fn.readline().strip()
+    url = "http://api.giphy.com/v1/gifs/random?api_key=" + mykeyn + "&tag=meme&rating=pg"
+    #print("HIII")
     straw = urllib.request.urlopen(url)
     straw = straw.read()
     memes = json.loads(straw)
