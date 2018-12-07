@@ -48,8 +48,11 @@ $ sudo pip install Flask
 * Debugger PIN: 248-748-502
 ```
   
+Flask: Runs the web application on local host.
+Wheel: Used for Flask.
+SQLite: Creates databases for storing information.
+URLLib3: Receives information from APIs.
  ## Dependencies: 
- 1. python
- 2. virtual environment
- 3. flask 
- 4. wheel
+ 1. URLLib3: process apis
+ 2. sqlite : mangages our database 
+ 3. python(flask) : runs our web application 
