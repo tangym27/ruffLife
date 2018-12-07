@@ -202,7 +202,7 @@ def reload2():
     if request.method == "POST":
         return redirect("/feed#fact")
     else:
-        return redirect("/feed#quote")
+        return redirect("/feed#quotes")
 
 # reload route for memes, will go to appropriate section
 @app.route("/reloadMeme")

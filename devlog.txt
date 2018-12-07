@@ -215,6 +215,11 @@ aaronL -- 2018-12-05 15:17
 - removed weather/joke section added meme section
 ==============================================================
 
+michelleT -- 2018-12-05 23:00
+--------------------------------------------------------------
+- added function for database usage
+==============================================================
+
 kaitlinW -- 2018-12-06 00:30
 --------------------------------------------------------------
 - finalized all tabs
@@ -246,15 +251,6 @@ aaronL -- 2018-12-06 21:43
   hide alert until flash
 ==============================================================
 
-aaronL -- 2018-12-07 02:07
---------------------------------------------------------------
-- finished adding like functionality to quotes, facts, and dogs
-- finished edit styles and coordinating color schemes
-- finished fixing main page nav bar
-- finished testing for errors
-- finished project(i think)
-==============================================================
-
 boL -- 2018-12-06 23:01
 -------------------------------------------------------------
 - added cat/dog facts
@@ -268,4 +264,10 @@ aaronL -- 2018-12-07 02:07
 - finished fixing main page nav bar
 - finished testing for errors
 - finished project(i think)
+==============================================================
+
+michelleT -- 2018-12-07 05:14
+--------------------------------------------------------------
+- was super proud of these people
+- fixed small issue with linking & redirection
 ==============================================================
